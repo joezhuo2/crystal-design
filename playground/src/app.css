@@ -4,11 +4,6 @@
   --accent: #a8e0ff;
   --line: rgb(255 255 255 / 0.2);
   --panel: rgb(0 0 0 / 0.7);
-  --ripple:
-    radial-gradient(circle at 22% 50%, var(--accent) 0 17px, transparent 18px),
-    radial-gradient(circle, transparent 0 29px, #fff 30px 31px, transparent 32px),
-    radial-gradient(circle, transparent 0 59px, #fff 60px 61px, transparent 62px),
-    radial-gradient(circle, transparent 0 89px, #fff 90px 91px, transparent 92px);
   color-scheme: dark;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
@@ -124,7 +119,7 @@ h1 {
   position: relative;
   padding: 16px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 15px;
 }
 
 .grid li:hover {
@@ -144,7 +139,7 @@ h1 {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 12px;
+  border-radius: 15px;
 }
 
 .grid h2 a:focus-visible {
@@ -168,8 +163,6 @@ h1 {
   height: 200px;
   margin-bottom: 16px;
   overflow: hidden;
-  border-radius: 6px;
-  background: var(--ripple);
 }
 
 .thumb-stage {
@@ -246,17 +239,8 @@ pre {
 }
 
 .preview {
-  --height: 460px;
-  height: var(--height);
-  overflow: auto;
-}
-
-.overlay {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  height: var(--height);
-  margin-bottom: calc(var(--height) * -1);
+  position: relative;
+  height: 460px;
   overflow: hidden;
 }
 
@@ -279,20 +263,15 @@ pre {
   font-size: 14px;
 }
 
-.overlay h3,
+.preview h3,
 .thumb h3 {
   margin: 0 0 8px;
 }
 
-.overlay p,
+.preview p,
 .thumb p {
   margin: 0;
   white-space: normal;
-}
-
-.preview section {
-  height: 300px;
-  background: var(--ripple);
 }
 
 .code {

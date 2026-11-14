@@ -1,7 +1,6 @@
 import { useRef, useState, useSyncExternalStore, type PointerEvent, type ReactNode } from 'react'
 import { catalog, defaultsOf, type Entry, type Values } from './catalog'
 
-const backdrop = [1, 2, 3, 4, 5, 6]
 const categories = ['All', ...new Set(catalog.map((entry) => entry.category))]
 
 const subscribe = (notify: () => void) => {
@@ -106,7 +105,7 @@ It is a liquid glass surface that refracts whatever is behind it, so place it ov
       <h1>{entry.name}</h1>
       <p>{entry.description}</p>
 
-      <p className="hint">Drag the component around. Scroll inside the preview to move the backdrop.</p>
+      <p className="hint">Drag the component around the preview.</p>
 
       <div className="toggle" data-view={view} role="group" aria-label="View">
         <button type="button" aria-pressed={view === 'preview'} onClick={() => setView('preview')}>
@@ -119,13 +118,8 @@ It is a liquid glass surface that refracts whatever is behind it, so place it ov
 
       <div className="detail">
         {view === 'preview' ? (
-          <div className="preview" tabIndex={0} aria-label={`${entry.name} preview. Drag the component, scroll the backdrop.`}>
-            <div className="overlay">
-              <Draggable>{entry.render(values)}</Draggable>
-            </div>
-            {backdrop.map((id) => (
-              <section key={id} />
-            ))}
+          <div className="preview">
+            <Draggable>{entry.render(values)}</Draggable>
           </div>
         ) : (
           <div className="code">
@@ -180,15 +174,25 @@ It is a liquid glass surface that refracts whatever is behind it, so place it ov
 function Draggable({ children }: { children: ReactNode }) {
   const [offset, setOffset] = useState({ x: 0, y: 0 })
 
-  const origin = useRef({ x: 0, y: 0 })
+  const origin = useRef<{ x: number; y: number }>(null)
 
   const grab = (event: PointerEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) return
-    event.currentTarget.setPointerCapture(event.pointerId)
     origin.current = { x: event.clientX - offset.x, y: event.clientY - offset.y }
   }
+  const release = () => {
+    origin.current = null
+  }
   const move = (event: PointerEvent<HTMLDivElement>) => {
-    if (!event.currentTarget.hasPointerCapture(event.pointerId)) return
+    if (!origin.current) return
+    if (!event.currentTarget.hasPointerCapture(event.pointerId)) {
+      const moved = Math.hypot(
+        event.clientX - offset.x - origin.current.x,
+        event.clientY - offset.y - origin.current.y,
+      )
+      if (moved < 5) return
+      event.currentTarget.setPointerCapture(event.pointerId)
+    }
     const limitX = event.currentTarget.offsetWidth / 2
     const limitY = event.currentTarget.offsetHeight / 2
     setOffset({
@@ -203,6 +207,8 @@ function Draggable({ children }: { children: ReactNode }) {
       style={{ transform: `translate(${offset.x}px, ${offset.y}px)` }}
       onPointerDown={grab}
       onPointerMove={move}
+      onPointerUp={release}
+      onPointerCancel={release}
     >
       {children}
     </div>

@@ -1,10 +1,10 @@
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { Button } from '@crystal-design/button'
 import { Card } from '@crystal-design/card'
 import { GlassSurface } from '@crystal-design/glass'
 import { Icon } from '@crystal-design/icon'
 import { Navbar } from '@crystal-design/navbar'
-import { Sidebar, SidebarItem } from '@crystal-design/sidebar'
+import { Sidebar, SidebarItem, type SidebarProps } from '@crystal-design/sidebar'
 
 export type Values = Record<string, string | number | boolean>
 
@@ -58,6 +58,29 @@ function Glyph({ d }: { d: string }) {
   )
 }
 
+const sidebarItems = [
+  { label: 'Home', glyph: glyphs.home },
+  { label: 'Components', glyph: glyphs.grid },
+  { label: 'Favorites', glyph: glyphs.star },
+]
+
+function SidebarDemo(props: SidebarProps) {
+  const [active, setActive] = useState('Home')
+  return (
+    <Sidebar {...props} aria-label="Demo">
+      {sidebarItems.map((item) => (
+        <SidebarItem
+          key={item.label}
+          icon={<Glyph d={item.glyph} />}
+          label={item.label}
+          active={item.label === active}
+          onClick={() => setActive(item.label)}
+        />
+      ))}
+    </Sidebar>
+  )
+}
+
 const surface: Entry = {
   id: 'glass',
   name: 'Surface (Liquid Glass)',
@@ -99,7 +122,7 @@ const card: Entry = {
   category: 'Surfaces',
   description: 'Padded panel for text, media or actions.',
   controls: [
-    ...glassControls(10, 64),
+    ...glassControls(15, 64),
     { key: 'title', label: 'Title', type: 'text', value: 'Liquid glass' },
     { key: 'body', label: 'Body', type: 'text', value: 'Content stays sharp while the rim bends the page behind it.' },
   ],
@@ -149,19 +172,16 @@ const sidebar: Entry = {
   category: 'Navigation',
   description: 'Icon rail that expands on hover.',
   controls: glassControls(10, 32),
-  render: (v) => (
-    <Sidebar {...glassProps(v)} aria-label="Demo">
-      <SidebarItem icon={<Glyph d={glyphs.home} />} label="Home" href="#/sidebar" active />
-      <SidebarItem icon={<Glyph d={glyphs.grid} />} label="Components" href="#/sidebar" />
-      <SidebarItem icon={<Glyph d={glyphs.star} />} label="Favorites" />
-    </Sidebar>
-  ),
-  code: (v) => `import { Sidebar, SidebarItem } from '@crystal-design/sidebar'
+  render: (v) => <SidebarDemo {...glassProps(v)} />,
+  code: (v) => `import { useState } from 'react'
+import { Sidebar, SidebarItem } from '@crystal-design/sidebar'
+
+const [active, setActive] = useState('Home')
 
 <Sidebar${glassAttrs(sidebar, v)} aria-label="Sections">
-  <SidebarItem icon={<HomeIcon />} label="Home" href="/" active />
-  <SidebarItem icon={<GridIcon />} label="Components" href="/components" />
-  <SidebarItem icon={<StarIcon />} label="Favorites" onClick={openFavorites} />
+  <SidebarItem icon={<HomeIcon />} label="Home" active={active === 'Home'} onClick={() => setActive('Home')} />
+  <SidebarItem icon={<GridIcon />} label="Components" active={active === 'Components'} onClick={() => setActive('Components')} />
+  <SidebarItem icon={<StarIcon />} label="Favorites" active={active === 'Favorites'} onClick={() => setActive('Favorites')} />
 </Sidebar>`,
 }
 
@@ -172,7 +192,7 @@ const icon: Entry = {
   category: 'Surfaces',
   description: 'Glass tile around a glyph or logo.',
   controls: [
-    { key: 'size', label: 'Size', type: 'range', min: 32, max: 240, value: 96 },
+    { key: 'size', label: 'Size', type: 'range', min: 32, max: 240, value: 56 },
     { key: 'strength', label: 'Refraction', type: 'range', min: 0, max: 120, value: 30 },
     { key: 'bezel', label: 'Bezel', type: 'range', min: 4, max: 40, value: 20 },
   ],
