@@ -27,7 +27,7 @@ type Maps = { w: number; h: number; map: string; rim?: string }
 
 export function GlassSurface<T extends ElementType = 'div'>({
   as,
-  radius = 10,
+  radius = 12,
   mask,
   strength = 30,
   bezel = 20,

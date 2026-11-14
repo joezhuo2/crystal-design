@@ -3,7 +3,7 @@ import styles from './Button.module.css'
 
 export type ButtonProps = Omit<GlassSurfaceProps<'button'>, 'as'>
 
-export function Button({ radius = 10, type = 'button', className, ...rest }: ButtonProps) {
+export function Button({ radius = 12, type = 'button', className, ...rest }: ButtonProps) {
   return (
     <GlassSurface
       as="button"

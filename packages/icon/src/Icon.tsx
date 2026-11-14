@@ -7,7 +7,7 @@ export type IconProps = Omit<GlassSurfaceProps<'span'>, 'as' | 'mask'> & {
   label?: string
 }
 
-export function Icon({ src, size = 56, label, radius = 10, className, style, ...rest }: IconProps) {
+export function Icon({ src, size = 56, label, radius = 12, className, style, ...rest }: IconProps) {
   return (
     <GlassSurface
       as="span"

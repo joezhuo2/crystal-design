@@ -12,7 +12,7 @@ export type SidebarItemProps = {
   onClick?: MouseEventHandler<HTMLElement>
 }
 
-export function Sidebar({ radius = 10, className, ...rest }: SidebarProps) {
+export function Sidebar({ radius = 12, className, ...rest }: SidebarProps) {
   return (
     <GlassSurface
       as="nav"
