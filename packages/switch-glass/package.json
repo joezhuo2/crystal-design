@@ -1,7 +1,7 @@
 {
   "name": "@crystal-design/switch-glass",
   "version": "0.1.0",
-  "description": "Liquid glass switch and checkbox for React",
+  "description": "Liquid glass switch for React",
   "type": "module",
   "sideEffects": [
     "**/*.css"
