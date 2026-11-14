@@ -3,7 +3,7 @@ import styles from './Navbar.module.css'
 
 export type NavbarProps = Omit<GlassSurfaceProps<'nav'>, 'as'>
 
-export function Navbar({ radius = 8, className, ...rest }: NavbarProps) {
+export function Navbar({ radius = 10, className, ...rest }: NavbarProps) {
   return (
     <GlassSurface
       as="nav"

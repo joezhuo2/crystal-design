@@ -27,10 +27,10 @@ type Maps = { w: number; h: number; map: string; rim?: string }
 
 export function GlassSurface<T extends ElementType = 'div'>({
   as,
-  radius = 6,
+  radius = 10,
   mask,
-  strength = 48,
-  bezel = 18,
+  strength = 30,
+  bezel = 20,
   className,
   style,
   children,
@@ -50,17 +50,14 @@ export function GlassSurface<T extends ElementType = 'div'>({
       const w = el.offsetWidth
       const h = el.offsetHeight
       if (!w || !h) return
-      const ratio = Math.min(window.devicePixelRatio || 1, 2)
-      const cw = Math.round(w * ratio)
-      const ch = Math.round(h * ratio)
-      const canvas = document.createElement('canvas')
-      canvas.width = cw
-      canvas.height = ch
-      const ctx = canvas.getContext('2d', { willReadFrequently: true })
-      if (!ctx) return
-      const alpha = (sigma: number) => {
-        ctx.clearRect(0, 0, cw, ch)
-        ctx.filter = `blur(${sigma}px)`
+      const layer = (scale: number, sigma: number, encode: typeof encodeMap) => {
+        const cw = Math.round(w * scale)
+        const ch = Math.round(h * scale)
+        const canvas = document.createElement('canvas')
+        canvas.width = cw
+        canvas.height = ch
+        const ctx = canvas.getContext('2d', { willReadFrequently: true })!
+        ctx.filter = `blur(${sigma * scale}px)`
         if (image) {
           const fit = Math.min(cw / image.naturalWidth, ch / image.naturalHeight)
           const iw = image.naturalWidth * fit
@@ -68,20 +65,16 @@ export function GlassSurface<T extends ElementType = 'div'>({
           ctx.drawImage(image, (cw - iw) / 2, (ch - ih) / 2, iw, ih)
         } else {
           ctx.beginPath()
-          ctx.roundRect(0, 0, cw, ch, Math.min(radius, w / 2, h / 2) * ratio)
+          ctx.roundRect(0, 0, cw, ch, Math.min(radius, w / 2, h / 2) * scale)
           ctx.fill()
         }
-        return ctx.getImageData(0, 0, cw, ch).data
+        const pixels = encode(ctx.getImageData(0, 0, cw, ch).data, cw, ch, sigma * scale)
+        ctx.putImageData(new ImageData(pixels, cw, ch), 0, 0)
+        return canvas.toDataURL()
       }
-      const softSigma = (bezel / 2) * ratio
-      const sharpSigma = 0.75 * ratio
       try {
-        const toUrl = (pixels: Uint8ClampedArray<ArrayBuffer>) => {
-          ctx.putImageData(new ImageData(pixels, cw, ch), 0, 0)
-          return canvas.toDataURL()
-        }
-        const map = toUrl(encodeMap(alpha(softSigma), cw, ch, softSigma))
-        const rim = image && toUrl(encodeRim(alpha(sharpSigma), cw, ch, sharpSigma))
+        const map = layer(1, bezel / 2, encodeMap)
+        const rim = image && layer(Math.min(window.devicePixelRatio || 1, 2), 0.75, encodeRim)
         setMaps({ w, h, map, rim })
       } catch {
         setMaps(undefined)
@@ -101,7 +94,7 @@ export function GlassSurface<T extends ElementType = 'div'>({
   }, [mask, radius, bezel])
 
   const shape = mask ? `url("${mask}") center / contain no-repeat` : undefined
-  const refraction = maps && `url(#${id}) blur(var(--cg-blur, 1.5px)) saturate(1.4)`
+  const refraction = maps && `url(#${id}) blur(var(--cg-blur, 2px)) saturate(1.4)`
 
   return (
     <Tag
