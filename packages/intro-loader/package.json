@@ -1,0 +1,29 @@
+{
+  "name": "@crystal-design/intro-loader",
+  "version": "0.1.0",
+  "description": "Boot-style intro loading overlay with stages, progress and exit for React",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build --config ../../vite.lib.ts && tsc -p ."
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

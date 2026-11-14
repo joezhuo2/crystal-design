@@ -1,0 +1,69 @@
+:where(.ring) {
+  --ring-color: var(--cd-accent, #a8e0ff);
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  color: var(--cd-fg, #fff);
+}
+
+:where(.ring[data-level='warn']) {
+  --ring-color: var(--cd-warn, #ffd166);
+}
+
+:where(.ring[data-level='high']) {
+  --ring-color: var(--cd-danger, #ff6b6b);
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.track,
+.bar {
+  fill: none;
+}
+
+:where(.track) {
+  stroke: var(--cd-line, rgba(255, 255, 255, 0.18));
+}
+
+:where(.bar) {
+  stroke: var(--ring-color);
+  stroke-linecap: round;
+  transition:
+    stroke-dashoffset 0.6s var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1)),
+    stroke 0.3s var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1));
+}
+
+.center {
+  position: relative;
+  display: grid;
+  place-items: center;
+  font-size: 0.8em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ring[data-pulse] .bar {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+
+  .ring[data-pulse] .bar {
+    animation: none;
+  }
+}

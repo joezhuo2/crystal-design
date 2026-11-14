@@ -37,6 +37,32 @@ import { entry as checkbox } from './entries/checkbox'
 import { entry as colorPicker } from './entries/color-picker'
 import { entry as tooltip } from './entries/tooltip'
 import { entry as smoothScroll } from './entries/smooth-scroll'
+import { entry as checkboxGlassEntry } from './entries/checkbox-glass'
+import { entry as progressRingGlassEntry } from './entries/progress-ring-glass'
+import { entry as timedButtonGlassEntry } from './entries/timed-button-glass'
+import { entry as navbarEntry } from './entries/navbar'
+import { entry as sidebarEntry } from './entries/sidebar'
+import { entry as progressRingEntry } from './entries/progress-ring'
+import { entry as timedButtonEntry } from './entries/timed-button'
+import { entry as smoothRangeEntry } from './entries/smooth-range'
+import { entry as introLoaderEntry } from './entries/intro-loader'
+import { entry as glideEffectEntry } from './entries/glide-effect'
+import { entry as followEffectEntry } from './entries/follow-effect'
+import { entry as focusEffectEntry } from './entries/focus-effect'
+import { entry as clickEffectEntry } from './entries/click-effect'
+import { entry as orbitEffectEntry } from './entries/orbit-effect'
+import { entry as shimmerEffectEntry } from './entries/shimmer-effect'
+import { entry as fuseEffectEntry } from './entries/fuse-effect'
+import { entry as popEffectEntry } from './entries/pop-effect'
+import { entry as fadeInEffectEntry } from './entries/fade-in-effect'
+import { entry as collapseEffectEntry } from './entries/collapse-effect'
+import { entry as morphEffectEntry } from './entries/morph-effect'
+import { entry as swapEffectEntry } from './entries/swap-effect'
+import { entry as drawEffectEntry } from './entries/draw-effect'
+import { entry as pulseEffectEntry } from './entries/pulse-effect'
+import { entry as textScrambleEntry } from './entries/text-scramble'
+import { entry as glitchTextEntry } from './entries/glitch-text'
+import { entry as rippleHoverEffectEntry } from './entries/ripple-hover-effect'
 
 export { lookControls, lookVars, type Control, type Entry, type Values } from './entry'
 
@@ -217,6 +243,9 @@ export const catalog: Entry[] = [
   toastGlass,
   commandPaletteGlass,
   switchGlass,
+  checkboxGlassEntry,
+  progressRingGlassEntry,
+  timedButtonGlassEntry,
   accordionGlass,
   skeletonGlass,
   islandGlass,
@@ -229,6 +258,29 @@ export const catalog: Entry[] = [
   colorPicker,
   tooltip,
   smoothScroll,
+  navbarEntry,
+  sidebarEntry,
+  progressRingEntry,
+  timedButtonEntry,
+  smoothRangeEntry,
+  introLoaderEntry,
+  glideEffectEntry,
+  followEffectEntry,
+  focusEffectEntry,
+  clickEffectEntry,
+  orbitEffectEntry,
+  shimmerEffectEntry,
+  fuseEffectEntry,
+  popEffectEntry,
+  fadeInEffectEntry,
+  collapseEffectEntry,
+  morphEffectEntry,
+  swapEffectEntry,
+  drawEffectEntry,
+  pulseEffectEntry,
+  textScrambleEntry,
+  glitchTextEntry,
+  rippleHoverEffectEntry,
 ]
 
 export const defaultsOf = (entry: Entry): Values =>

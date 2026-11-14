@@ -1,0 +1,15 @@
+:where(.root) {
+  display: inline-block;
+  position: relative;
+  touch-action: manipulation;
+}
+
+:where(.word) {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+:where(.char) {
+  display: inline-block;
+  will-change: transform;
+}

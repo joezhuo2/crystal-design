@@ -1,0 +1,54 @@
+:where(.root) {
+  display: block;
+}
+
+.root[data-state='wait']:not([data-split]) {
+  opacity: 0;
+}
+
+.root[data-state='enter']:not([data-split]) {
+  animation: fade-in var(--fe-duration, 500ms) var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1)) var(--fe-delay, 0ms) backwards;
+}
+
+.root[data-state='exit']:not([data-split]) {
+  animation: fade-out var(--fe-duration, 500ms) var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1)) forwards;
+  pointer-events: none;
+}
+
+.token {
+  display: inline-block;
+  white-space: pre;
+}
+
+.root[data-split][data-state='wait'] .token {
+  opacity: 0;
+}
+
+.root[data-split][data-state='enter'] .token {
+  animation: fade-in var(--fe-duration, 500ms) var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1)) var(--fe-delay, 0ms) backwards;
+}
+
+.root[data-split][data-state='exit'] .token {
+  animation: fade-out var(--fe-duration, 500ms) var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1)) forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: var(--fe-from, none);
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: var(--fe-from, none);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root[data-state] .token,
+  .root[data-state]:not([data-split]) {
+    animation: none;
+  }
+}

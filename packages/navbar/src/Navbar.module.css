@@ -1,0 +1,36 @@
+:where(.navbar) {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  max-width: calc(100vw - 32px);
+  box-sizing: border-box;
+  border: 1px solid var(--cd-line, rgb(255 255 255 / 0.2));
+  border-radius: var(--cd-radius, 12px);
+  background: var(--cd-raised, #111);
+  color: var(--cd-fg, #fff);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.35);
+}
+
+.navbar a {
+  color: inherit;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.navbar a:hover {
+  background: rgb(255 255 255 / 0.1);
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid var(--cd-accent, #a8e0ff);
+  outline-offset: 2px;
+}

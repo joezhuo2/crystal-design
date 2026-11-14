@@ -1,0 +1,43 @@
+:where(.root) {
+  display: inline-block;
+  border-radius: var(--pulse-radius, 12px);
+}
+
+.root[data-active='true'][data-mode='opacity'] {
+  animation: pulse-opacity var(--pulse-duration, 800ms) ease-in-out infinite;
+}
+
+.root[data-active='true'][data-mode='scale'] {
+  animation: pulse-scale var(--pulse-duration, 800ms) ease-in-out infinite;
+}
+
+.root[data-active='true'][data-mode='glow'] {
+  animation: pulse-glow var(--pulse-duration, 800ms) ease-out infinite;
+}
+
+@keyframes pulse-opacity {
+  50% {
+    opacity: var(--pulse-min, 0.5);
+  }
+}
+
+@keyframes pulse-scale {
+  50% {
+    transform: scale(var(--pulse-scale, 1.06));
+  }
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--cd-accent, #a8e0ff) 60%, transparent);
+  }
+  to {
+    box-shadow: 0 0 0 14px color-mix(in srgb, var(--cd-accent, #a8e0ff) 0%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root[data-active='true'] {
+    animation: none;
+  }
+}
