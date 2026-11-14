@@ -1,0 +1,6 @@
+:where(.root) {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 1.5em;
+  overflow: visible;
+}
