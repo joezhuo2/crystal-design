@@ -1,0 +1,59 @@
+:where(.root) {
+  position: relative;
+  display: inline-flex;
+}
+
+:where(.bubble) {
+  position: absolute;
+  z-index: 20;
+  padding: 6px 10px;
+  border: 1px solid var(--cd-line, rgb(255 255 255 / 0.2));
+  border-radius: var(--cd-radius, 8px);
+  background: var(--cd-raised, #111);
+  color: var(--cd-fg, #fff);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  translate: var(--tx, 0) var(--ty, 0);
+  transition:
+    opacity 0.2s,
+    translate 0.2s var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1));
+}
+
+:where(.root[data-side='bottom']) > .bubble {
+  --ty: -4px;
+  top: calc(100% + 8px);
+}
+
+:where(.root[data-side='top']) > .bubble {
+  --ty: 4px;
+  bottom: calc(100% + 8px);
+}
+
+:where(.root[data-align='start']) > .bubble {
+  left: 0;
+}
+
+:where(.root[data-align='end']) > .bubble {
+  right: 0;
+}
+
+:where(.root[data-align='center']) > .bubble {
+  --tx: -50%;
+  left: 50%;
+}
+
+:where(.root:is(:hover, :has(:focus-visible))) > .bubble {
+  opacity: 1;
+  translate: var(--tx, 0) 0;
+  transition-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.bubble) {
+    transition: none;
+  }
+}
