@@ -41,10 +41,12 @@ Names follow one pattern: a component called Glass Tabs lives in
 
 1. Create `packages/<name>-glass` with a `package.json`, `src/index.ts` and
    the component, built on `GlassSurface` from `@crystal-design/surface-glass`.
+   Components that are not glass use a plain name (`packages/checkbox`,
+   `Checkbox`) and theme through the `--cd-*` variables.
 2. Re-export it from `packages/glass/src/index.ts`, add it to that package's
    dependencies, and add it to the root `build` script.
-3. Add an entry to `playground/src/catalog.tsx` with its controls, preview and
-   code snippet.
+3. Add a playground entry in `playground/src/entries/<name>.tsx` with its
+   controls, preview and code snippet, and list it in `playground/src/catalog.tsx`.
 4. Add it to the [Features](README.md#features) list in the README and bump
    the components badge.
 
