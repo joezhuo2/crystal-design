@@ -1,9 +1,9 @@
 {
   "name": "@crystal-design/glass",
   "version": "0.1.0",
-  "description": "Liquid glass surface for React that refracts whatever is behind it",
+  "description": "Every Crystal Design liquid glass component for React in one package",
   "type": "module",
-  "sideEffects": ["**/*.css"],
+  "sideEffects": false,
   "files": ["dist"],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -15,6 +15,14 @@
   },
   "scripts": {
     "build": "vite build --config ../../vite.lib.ts && tsc -p ."
+  },
+  "dependencies": {
+    "@crystal-design/button-glass": "^0.1.0",
+    "@crystal-design/card-glass": "^0.1.0",
+    "@crystal-design/icon-glass": "^0.1.0",
+    "@crystal-design/navbar-glass": "^0.1.0",
+    "@crystal-design/sidebar-glass": "^0.1.0",
+    "@crystal-design/surface-glass": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=18"

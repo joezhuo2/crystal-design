@@ -1,13 +1,13 @@
-import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/glass'
-import styles from './Icon.module.css'
+import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/surface-glass'
+import styles from './GlassIcon.module.css'
 
-export type IconProps = Omit<GlassSurfaceProps<'span'>, 'as' | 'mask'> & {
+export type GlassIconProps = Omit<GlassSurfaceProps<'span'>, 'as' | 'mask'> & {
   src?: string
   size?: number
   label?: string
 }
 
-export function Icon({ src, size = 56, label, radius = 12, className, style, ...rest }: IconProps) {
+export function GlassIcon({ src, size = 56, label, radius = 12, className, style, ...rest }: GlassIconProps) {
   return (
     <GlassSurface
       as="span"

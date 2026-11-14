@@ -15,8 +15,10 @@ export default defineConfig({
   plugins: [
     {
       name: 'import-own-css',
-      renderChunk(code, chunk) {
-        return chunk.isEntry ? { code: `import "./index.css";\n${code}`, map: null } : null
+      enforce: 'post',
+      generateBundle(_, bundle) {
+        const entry = bundle['index.js']
+        if (bundle['index.css'] && entry?.type === 'chunk') entry.code = `import "./index.css";\n${entry.code}`
       },
     },
   ],

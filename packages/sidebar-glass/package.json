@@ -1,7 +1,7 @@
 {
-  "name": "@crystal-design/navbar",
+  "name": "@crystal-design/sidebar-glass",
   "version": "0.1.0",
-  "description": "Floating liquid glass navbar for React",
+  "description": "Collapsing liquid glass sidebar for React",
   "type": "module",
   "sideEffects": ["**/*.css"],
   "files": ["dist"],
@@ -17,7 +17,7 @@
     "build": "vite build --config ../../vite.lib.ts && tsc -p ."
   },
   "dependencies": {
-    "@crystal-design/glass": "^0.1.0"
+    "@crystal-design/surface-glass": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=18"

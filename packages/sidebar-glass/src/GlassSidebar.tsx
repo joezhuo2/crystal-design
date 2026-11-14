@@ -1,10 +1,10 @@
-import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/glass'
+import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/surface-glass'
 import type { MouseEventHandler, ReactNode } from 'react'
-import styles from './Sidebar.module.css'
+import styles from './GlassSidebar.module.css'
 
-export type SidebarProps = Omit<GlassSurfaceProps<'nav'>, 'as'>
+export type GlassSidebarProps = Omit<GlassSurfaceProps<'nav'>, 'as'>
 
-export type SidebarItemProps = {
+export type GlassSidebarItemProps = {
   icon: ReactNode
   label: string
   href?: string
@@ -12,7 +12,7 @@ export type SidebarItemProps = {
   onClick?: MouseEventHandler<HTMLElement>
 }
 
-export function Sidebar({ radius = 12, className, ...rest }: SidebarProps) {
+export function GlassSidebar({ radius = 12, className, ...rest }: GlassSidebarProps) {
   return (
     <GlassSurface
       as="nav"
@@ -23,7 +23,7 @@ export function Sidebar({ radius = 12, className, ...rest }: SidebarProps) {
   )
 }
 
-export function SidebarItem({ icon, label, href, active, onClick }: SidebarItemProps) {
+export function GlassSidebarItem({ icon, label, href, active, onClick }: GlassSidebarItemProps) {
   const content = (
     <>
       <span className={styles.icon} aria-hidden="true">
