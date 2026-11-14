@@ -1,0 +1,25 @@
+:where(.root) {
+  position: relative;
+  display: inline-block;
+}
+
+.clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--cd-shimmer-radius);
+  pointer-events: none;
+}
+
+.band {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-130%);
+  background: linear-gradient(110deg, transparent 30%, var(--cd-shimmer-color) 50%, transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clip {
+    display: none;
+  }
+}

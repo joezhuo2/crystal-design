@@ -1,0 +1,50 @@
+@property --cd-orbit-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:where(.root) {
+  position: relative;
+  display: inline-block;
+}
+
+.root::after {
+  content: '';
+  position: absolute;
+  inset: calc(var(--cd-orbit-thickness) * -0.5);
+  padding: var(--cd-orbit-thickness);
+  border-radius: calc(var(--cd-orbit-radius) + var(--cd-orbit-thickness) * 0.5);
+  pointer-events: none;
+  background: conic-gradient(from var(--cd-orbit-angle), transparent 0 70%, var(--cd-orbit-color) 92%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: orbit var(--cd-orbit-speed) linear infinite;
+}
+
+.hover::after {
+  opacity: 0;
+  transition: opacity 0.25s var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1));
+}
+
+.hover:hover::after,
+.hover:focus-within::after {
+  opacity: 1;
+}
+
+@keyframes orbit {
+  to {
+    --cd-orbit-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root::after {
+    animation: none;
+  }
+
+  .hover::after {
+    transition: none;
+  }
+}
