@@ -9,6 +9,7 @@ import {
   type ReactNode,
 } from 'react'
 import { flushSync } from 'react-dom'
+import { GlassSurface } from '@crystal-design/surface-glass'
 import { Checkbox } from '@crystal-design/checkbox'
 import { ColorPicker } from '@crystal-design/color-picker'
 import { FeedbackButton } from '@crystal-design/feedback-button'
@@ -17,14 +18,28 @@ import { catalog, defaultsOf, lookControls, lookVars, type Control, type Entry, 
 
 const calm = () => matchMedia('(prefers-reduced-motion: reduce)').matches
 
-const subscribe = (notify: () => void) => {
-  const change = () => {
-    if (!document.startViewTransition || calm()) return notify()
-    document.startViewTransition(() => {
-      flushSync(notify)
+const toTop = () =>
+  new Promise<void>((done) => {
+    if (scrollY === 0 || calm()) {
       scrollTo(0, 0)
+      return done()
+    }
+    const end = () => {
+      removeEventListener('scrollend', end)
+      clearTimeout(fallback)
+      done()
+    }
+    const fallback = setTimeout(end, 800)
+    addEventListener('scrollend', end)
+    scrollTo({ top: 0, behavior: 'smooth' })
+  })
+
+const subscribe = (notify: () => void) => {
+  const change = () =>
+    toTop().then(() => {
+      if (!document.startViewTransition || calm()) return notify()
+      document.startViewTransition(() => flushSync(notify))
     })
-  }
   addEventListener('hashchange', change)
   return () => removeEventListener('hashchange', change)
 }
@@ -33,6 +48,7 @@ const icons = {
   search: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-5-5',
   sun: 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4',
   moon: 'M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z',
+  menu: 'M4 6h16M4 12h16M4 18h16',
   back: 'M19 12H5M12 19l-7-7 7-7',
   copy: 'M9 9h11v11H9zM5 15H4V4h11v1',
   check: 'M5 12l5 5L20 7',
@@ -54,16 +70,77 @@ function GitHubMark() {
   )
 }
 
+type Section = 'all' | 'components' | 'effects'
+
+const sections: { id: Section; label: string; href: string; match: (entry: Entry) => boolean }[] = [
+  { id: 'all', label: 'All components', href: '#/', match: () => true },
+  { id: 'components', label: 'Components', href: '#/components', match: (entry) => entry.category !== 'Effects' },
+  { id: 'effects', label: 'Effects', href: '#/effects', match: (entry) => entry.category === 'Effects' },
+]
+
+const sectionOf = (hash: string, entry?: Entry): Section =>
+  entry
+    ? sections[2].match(entry)
+      ? 'effects'
+      : 'components'
+    : hash === '#/components'
+      ? 'components'
+      : hash === '#/effects'
+        ? 'effects'
+        : 'all'
+
 export function App() {
   const hash = useSyncExternalStore(subscribe, () => location.hash)
   const entry = catalog.find((item) => `#/${item.id}` === hash)
+  const section = sectionOf(hash, entry)
+  const current = sections.find((item) => item.id === section)!
+  const [open, setOpen] = useState(false)
+  const toggle = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setOpen(false)
+      toggle.current?.focus()
+    }
+    const pointerdown = (event: globalThis.PointerEvent) => {
+      const target = event.target as Element
+      if (target.closest('#sidebar') || toggle.current?.contains(target)) return
+      setOpen(false)
+    }
+    addEventListener('keydown', keydown)
+    addEventListener('pointerdown', pointerdown)
+    return () => {
+      removeEventListener('keydown', keydown)
+      removeEventListener('pointerdown', pointerdown)
+    }
+  }, [open])
+
+  const close = () => {
+    setOpen(false)
+    toggle.current?.focus()
+  }
 
   return (
     <div className="page">
       <header className="header">
-        <a href="#/" className="brand">
-          Crystal Design
-        </a>
+        <div className="header-start">
+          <button
+            ref={toggle}
+            type="button"
+            className="btn icon-btn menu-btn"
+            aria-label="Browse components"
+            aria-expanded={open}
+            aria-controls="sidebar"
+            onClick={() => setOpen(!open)}
+          >
+            <Svg d={icons.menu} />
+          </button>
+          <a href="#/" className="brand">
+            Crystal Design
+          </a>
+        </div>
         <div className="actions">
           <ThemeToggle />
           <Tooltip content="View source on GitHub" align="end">
@@ -73,7 +150,36 @@ export function App() {
           </Tooltip>
         </div>
       </header>
-      {entry ? <Detail key={entry.id} entry={entry} /> : <List />}
+      <div className="shell">
+        <GlassSurface as="nav" id="sidebar" className="side" data-open={open || undefined} radius={16} aria-label="Components">
+          <ul className="side-sections">
+            {sections.map((item) => (
+              <li key={item.id}>
+                <a
+                  className="side-link"
+                  href={item.href}
+                  aria-current={item.id === section && !entry ? 'page' : undefined}
+                  data-active={item.id === section || undefined}
+                  onClick={close}
+                >
+                  {item.label}
+                  <span className="side-count">{catalog.filter(item.match).length}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <ul className="side-entries" aria-label={current.label}>
+            {catalog.filter(current.match).map((item) => (
+              <li key={item.id}>
+                <a className="side-link" href={`#/${item.id}`} aria-current={item === entry ? 'page' : undefined} onClick={close}>
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </GlassSurface>
+        {entry ? <Detail key={entry.id} entry={entry} /> : <List section={section} />}
+      </div>
     </div>
   )
 }
@@ -100,23 +206,24 @@ function ThemeToggle() {
   )
 }
 
-function List() {
+function List({ section }: { section: Section }) {
   const [query, setQuery] = useState('')
 
   const needle = query.trim().toLowerCase()
-  const items = catalog.filter((entry) =>
-    `${entry.name} ${entry.category} ${entry.description}`.toLowerCase().includes(needle),
+  const current = sections.find((item) => item.id === section)!
+  const items = catalog.filter(
+    (entry) => current.match(entry) && `${entry.name} ${entry.category} ${entry.description}`.toLowerCase().includes(needle),
   )
 
   return (
     <main>
-      <h1>Components</h1>
+      <h1>{current.label}</h1>
       <label className="search">
         <Svg d={icons.search} />
         <input
           type="search"
-          placeholder="Search components"
-          aria-label="Search components"
+          placeholder={`Search ${current.label.toLowerCase()}`}
+          aria-label={`Search ${current.label.toLowerCase()}`}
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
