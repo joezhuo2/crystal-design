@@ -9,7 +9,7 @@ export const entry: Entry = {
   description: 'Collapsible sections in one glass container.',
   controls: [...glassControls(18, 30), { key: 'multiple', label: 'Allow multiple', type: 'toggle', value: false }],
   render: (v) => (
-    <GlassAccordion {...glassProps(v)} multiple={v.multiple as boolean} style={{ width: 320 }}>
+    <GlassAccordion {...glassProps(v)} multiple={v.multiple as boolean} style={{ width: 320, maxWidth: 'calc(100% - 32px)' }}>
       <GlassAccordionItem title="What is it?">A frosted container whose sections open with a smooth height animation.</GlassAccordionItem>
       <GlassAccordionItem title="Is it accessible?">Yes, each header is a button with aria-expanded, and closed content is inert.</GlassAccordionItem>
       <GlassAccordionItem title="Can several be open?">Turn on the multiple prop.</GlassAccordionItem>

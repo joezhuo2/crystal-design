@@ -22,7 +22,7 @@ export const entry: Entry = {
       density={v.density as number}
       lifetime={v.lifetime as number}
       style={{
-        width: 280,
+        width: 'min(280px, calc(100% - 32px))',
         height: 160,
         display: 'grid',
         placeItems: 'center',

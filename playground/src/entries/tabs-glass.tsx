@@ -3,8 +3,8 @@ import { GlassTabs } from '@crystal-design/tabs-glass'
 import { glassAttrs, glassControls, glassProps, type Entry, type Values } from '../entry'
 
 function Demo({ v }: { v: Values }) {
-  const [value, setValue] = useState('Overview')
-  const items = ['Overview', 'Activity', 'Settings'].slice(0, v.count as number)
+  const [value, setValue] = useState('Home')
+  const items = ['Home', 'Activity', 'Settings'].slice(0, v.count as number)
   const current = items.includes(value) ? value : items[0]
   return <GlassTabs {...glassProps(v)} items={items} value={current} onChange={setValue} aria-label="Demo" />
 }
@@ -20,10 +20,10 @@ export const entry: Entry = {
   code: (v) => `import { useState } from 'react'
 import { GlassTabs } from '@crystal-design/tabs-glass'
 
-const [tab, setTab] = useState('Overview')
+const [tab, setTab] = useState('Home')
 
 <GlassTabs${glassAttrs(entry, v)}
-  items={[${['Overview', 'Activity', 'Settings'].slice(0, v.count as number).map((s) => `'${s}'`).join(', ')}]}
+  items={[${['Home', 'Activity', 'Settings'].slice(0, v.count as number).map((s) => `'${s}'`).join(', ')}]}
   value={tab}
   onChange={setTab}
   aria-label="Sections"

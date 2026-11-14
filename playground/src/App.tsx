@@ -127,10 +127,8 @@ function List() {
             <li key={entry.id} style={{ '--i': index } as CSSProperties}>
               <div
                 className="thumb"
-                data-glass={entry.glass !== false}
                 data-hover={entry.hover || undefined}
                 inert={!entry.hover}
-                aria-hidden={entry.hover || undefined}
                 onClick={entry.hover ? () => (location.hash = `#/${entry.id}`) : undefined}
               >
                 <div className="thumb-stage">{entry.render(defaultsOf(entry))}</div>

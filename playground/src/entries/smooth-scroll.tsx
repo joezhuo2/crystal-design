@@ -14,7 +14,7 @@ function ScrollBox({ smooth, ease }: { smooth: boolean; ease: number }) {
       {smooth && <Smooth boxRef={ref} ease={ease} />}
       <div
         ref={ref}
-        style={{ height: 220, width: 'min(100%, 360px)', overflow: 'auto', padding: 16, border: '1px solid var(--line)', borderRadius: 'var(--radius)' }}
+        style={{ boxSizing: 'border-box', height: 180, width: 'min(calc(100% - 32px), 360px)', overflow: 'auto', padding: 16, border: '1px solid var(--line)', borderRadius: 'var(--radius)' }}
       >
         {Array.from({ length: 24 }, (_, i) => (
           <p key={i} style={{ margin: '0 0 12px' }}>

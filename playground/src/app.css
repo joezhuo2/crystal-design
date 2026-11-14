@@ -369,6 +369,7 @@ h1 {
   position: absolute;
   inset: 0;
   display: grid;
+  grid-template-columns: minmax(0, 100%);
   place-items: center;
   transform: translate(0);
 }
@@ -680,22 +681,6 @@ pre {
   padding: 16px;
   overflow-x: auto;
   white-space: pre-wrap;
-}
-
-.thumb::before {
-  content: 'Crystal';
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-content: center;
-  color: var(--backdrop-fg);
-  font-size: 64px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-}
-
-.thumb[data-glass='false']::before {
-  content: none;
 }
 
 .thumb[data-hover] {

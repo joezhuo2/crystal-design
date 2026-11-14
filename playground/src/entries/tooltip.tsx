@@ -6,6 +6,7 @@ export const entry: Entry = {
   name: 'Tooltip',
   pkg: '@crystal-design/tooltip',
   category: 'Overlays',
+  hover: true,
   description: 'CSS-only themed tooltip that shows on hover and focus.',
   glass: false,
   controls: [

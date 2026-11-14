@@ -7,6 +7,7 @@ export const entry: Entry = {
   name: 'Glass Tooltip',
   pkg: '@crystal-design/tooltip-glass',
   category: 'Overlays',
+  hover: true,
   description: 'Glass tooltip with a warm window so neighbours show instantly.',
   controls: [
     { key: 'content', label: 'Content', type: 'text', value: 'Saved to library' },
