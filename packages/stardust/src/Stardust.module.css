@@ -1,0 +1,28 @@
+:where(.host) {
+  position: relative;
+}
+
+.canvas {
+  pointer-events: none;
+}
+
+.fixed {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2147483000;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .canvas {
+    display: none;
+  }
+}
