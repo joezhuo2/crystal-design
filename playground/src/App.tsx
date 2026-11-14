@@ -1,17 +1,18 @@
 import {
   useEffect,
-  useId,
   useRef,
   useState,
   useSyncExternalStore,
   type CSSProperties,
   type InputHTMLAttributes,
-  type KeyboardEvent,
   type PointerEvent,
   type ReactNode,
 } from 'react'
 import { flushSync } from 'react-dom'
-import { hexToHsv, hsvToHex, isHex, type Hsv } from './color'
+import { Checkbox } from '@crystal-design/checkbox'
+import { ColorPicker } from '@crystal-design/color-picker'
+import { FeedbackButton } from '@crystal-design/feedback-button'
+import { Tooltip } from '@crystal-design/tooltip'
 import { catalog, defaultsOf, lookControls, lookVars, type Control, type Entry, type Values } from './catalog'
 
 const calm = () => matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -65,14 +66,11 @@ export function App() {
         </a>
         <div className="actions">
           <ThemeToggle />
-          <a
-            className="btn icon-btn"
-            href="https://github.com/joezhuo2/crystal-design"
-            aria-label="GitHub"
-            data-tip="View source on GitHub"
-          >
-            <GitHubMark />
-          </a>
+          <Tooltip content="View source on GitHub" align="end">
+            <a className="btn icon-btn" href="https://github.com/joezhuo2/crystal-design" aria-label="GitHub">
+              <GitHubMark />
+            </a>
+          </Tooltip>
         </div>
       </header>
       {entry ? <Detail key={entry.id} entry={entry} /> : <List />}
@@ -92,11 +90,13 @@ function ThemeToggle() {
   }
 
   return (
-    <button type="button" className="btn icon-btn" aria-label={`Switch to ${next} mode`} data-tip={`Switch to ${next} mode`} onClick={toggle}>
-      <span key={theme} className="spin">
-        <Svg d={theme === 'dark' ? icons.sun : icons.moon} />
-      </span>
-    </button>
+    <Tooltip content={`Switch to ${next} mode`} align="end">
+      <button type="button" className="btn icon-btn" aria-label={`Switch to ${next} mode`} onClick={toggle}>
+        <span key={theme} className="spin">
+          <Svg d={theme === 'dark' ? icons.sun : icons.moon} />
+        </span>
+      </button>
+    </Tooltip>
   )
 }
 
@@ -144,26 +144,24 @@ function List() {
 
 type Backdrop = { kind: string; text: string; color: string; image: string }
 
-const initialBackdrop: Backdrop = { kind: 'text', text: 'Glass', color: '', image: '' }
+const initialBackdrop: Backdrop = { kind: 'text', text: 'Crystal', color: '', image: '' }
 
 function Detail({ entry }: { entry: Entry }) {
   const [values, setValues] = useState<Values>(() => defaultsOf(entry))
   const [view, setView] = useState<'preview' | 'code'>('preview')
   const [backdrop, setBackdrop] = useState<Backdrop>(initialBackdrop)
-  const [resetState, setResetState] = useState<'idle' | 'busy' | 'done'>('idle')
   const set = (key: string, value: Values[string]) => setValues((current) => ({ ...current, [key]: value }))
   const setBack = (patch: Partial<Backdrop>) => setBackdrop((current) => ({ ...current, ...patch }))
 
-  const reset = () => {
-    setResetState('busy')
-    setTimeout(() => {
-      if (backdrop.image) URL.revokeObjectURL(backdrop.image)
-      setValues(defaultsOf(entry))
-      setBackdrop(initialBackdrop)
-      setResetState('done')
-    }, 600)
-    setTimeout(() => setResetState('idle'), 2200)
-  }
+  const reset = () =>
+    new Promise<void>((done) =>
+      setTimeout(() => {
+        if (backdrop.image) URL.revokeObjectURL(backdrop.image)
+        setValues(defaultsOf(entry))
+        setBackdrop(initialBackdrop)
+        done()
+      }, 600),
+    )
 
   const pickImage = (file?: File) => {
     if (!file) return
@@ -171,7 +169,8 @@ function Detail({ entry }: { entry: Entry }) {
     setBack({ kind: 'image', image: URL.createObjectURL(file) })
   }
 
-  const vars = lookVars(values)
+  const glass = entry.glass !== false
+  const vars = glass ? lookVars(values) : {}
   const css = Object.keys(vars).length
     ? `:root {\n${Object.entries(vars)
         .map(([key, value]) => `  ${key}: ${value};`)
@@ -186,8 +185,11 @@ function Detail({ entry }: { entry: Entry }) {
 2. Use it like this, adapting the content to my app:
 
 ${usage}
-${css ? `\n3. Add these CSS variables to tune the glass look:\n\n${css}\n` : ''}
-It is a liquid glass surface that refracts whatever is behind it, so place it over an image, gradient or other visual content. The radius, strength and bezel props tune the shape and the amount of refraction. Chromium browsers refract; other browsers fall back to frosted blur.`
+${css ? `\n3. Add these CSS variables to tune the glass look:\n\n${css}\n` : ''}${
+    glass
+      ? '\nIt is a liquid glass surface that refracts whatever is behind it, so place it over an image, gradient or other visual content. The radius, strength and bezel props tune the shape and the amount of refraction. Chromium browsers refract; other browsers fall back to frosted blur.'
+      : '\nIt is themed with CSS variables (--cd-accent, --cd-fg, --cd-bg, --cd-raised, --cd-line, --cd-radius, --cd-ease); set them on :root to match my app.'
+  }`
 
   return (
     <main>
@@ -242,12 +244,14 @@ It is a liquid glass surface that refracts whatever is behind it, so place it ov
             ))}
           </div>
 
-          <div className="group">
-            <h2>Glass</h2>
-            {lookControls.map((control) => (
-              <Field key={control.key} control={control} value={values[control.key]} onChange={(value) => set(control.key, value)} />
-            ))}
-          </div>
+          {glass && (
+            <div className="group">
+              <h2>Glass</h2>
+              {lookControls.map((control) => (
+                <Field key={control.key} control={control} value={values[control.key]} onChange={(value) => set(control.key, value)} />
+              ))}
+            </div>
+          )}
 
           <div className="group">
             <h2>Preview</h2>
@@ -273,17 +277,15 @@ It is a liquid glass surface that refracts whatever is behind it, so place it ov
               </label>
             ) : (
               backdrop.kind !== 'none' && (
-                <ColorPicker label="Backdrop color" value={backdrop.color || '#808080'} onChange={(color) => setBack({ color })} />
+                <ColorPicker className="field" data-type="color" label="Backdrop color" value={backdrop.color || '#808080'} onChange={(color) => setBack({ color })} />
               )
             )}
           </div>
 
           <div className="controls-footer">
-            <button type="button" className="btn" data-state={resetState} disabled={resetState === 'busy'} onClick={reset}>
-              <span key={resetState} className="swap" aria-live="polite">
-                {resetState === 'busy' ? 'Resetting…' : resetState === 'done' ? '✓ Settings reset' : 'Reset settings'}
-              </span>
-            </button>
+            <FeedbackButton className="btn" action={reset} busy="Resetting…" done="✓ Settings reset" resetAfter={1600}>
+              Reset settings
+            </FeedbackButton>
           </div>
         </form>
       </div>
@@ -298,7 +300,8 @@ It is a liquid glass surface that refracts whatever is behind it, so place it ov
 }
 
 function Field({ control, value, onChange }: { control: Control; value: Values[string]; onChange: (value: Values[string]) => void }) {
-  if (control.type === 'color') return <ColorPicker label={control.label} value={value as string} onChange={onChange} />
+  if (control.type === 'color')
+    return <ColorPicker className="field" data-type="color" label={control.label} value={value as string} onChange={onChange} />
 
   return (
     <label className="field" data-type={control.type}>
@@ -308,8 +311,14 @@ function Field({ control, value, onChange }: { control: Control; value: Values[s
       </span>
       {control.type === 'range' ? (
         <Range min={control.min} max={control.max} value={value as number} onChange={onChange} />
+      ) : control.type === 'select' ? (
+        <select value={value as string} onChange={(event) => onChange(event.target.value)}>
+          {control.options.map((option) => (
+            <option key={option}>{option}</option>
+          ))}
+        </select>
       ) : control.type === 'toggle' ? (
-        <input type="checkbox" checked={value as boolean} onChange={(event) => onChange(event.target.checked)} />
+        <Checkbox checked={value as boolean} onChange={(event) => onChange(event.target.checked)} />
       ) : (
         <input type={control.type} value={value as string} onChange={(event) => onChange(event.target.value)} />
       )}
@@ -378,112 +387,6 @@ function Range({ min, max, value, onChange, ...rest }: RangeProps) {
   )
 }
 
-const presets = ['#ffffff', '#000000', '#a8e0ff', '#6c4dff', '#ff7ab6', '#ffb340', '#34c759', '#ff453a']
-
-function ColorPicker({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
-  const [open, setOpen] = useState(false)
-  const [hsv, setHsv] = useState<Hsv>(() => hexToHsv(value))
-  const [draft, setDraft] = useState(value)
-  const root = useRef<HTMLDivElement>(null)
-  const id = useId()
-
-  useEffect(() => {
-    if (!open) return
-    const outside = (event: Event) => root.current?.contains(event.target as Node) || setOpen(false)
-    const escape = (event: globalThis.KeyboardEvent) => event.key === 'Escape' && setOpen(false)
-    addEventListener('pointerdown', outside)
-    addEventListener('keydown', escape)
-    return () => {
-      removeEventListener('pointerdown', outside)
-      removeEventListener('keydown', escape)
-    }
-  }, [open])
-
-  const apply = (next: Hsv) => {
-    setHsv(next)
-    const hex = hsvToHex(next)
-    setDraft(hex)
-    onChange(hex)
-  }
-
-  const toggle = () => {
-    if (!open) {
-      setHsv(hexToHsv(value))
-      setDraft(value)
-    }
-    setOpen(!open)
-  }
-
-  const pick = (event: PointerEvent<HTMLDivElement>) => {
-    if (event.buttons !== 1) return
-    event.currentTarget.setPointerCapture(event.pointerId)
-    const box = event.currentTarget.getBoundingClientRect()
-    const clamp = (n: number) => Math.max(0, Math.min(1, n))
-    apply({ ...hsv, s: clamp((event.clientX - box.left) / box.width), v: 1 - clamp((event.clientY - box.top) / box.height) })
-  }
-
-  const nudge = (event: KeyboardEvent<HTMLDivElement>) => {
-    const step = { ArrowLeft: [-0.02, 0], ArrowRight: [0.02, 0], ArrowUp: [0, 0.02], ArrowDown: [0, -0.02] }[event.key]
-    if (!step) return
-    event.preventDefault()
-    const clamp = (n: number) => Math.max(0, Math.min(1, n))
-    apply({ ...hsv, s: clamp(hsv.s + step[0]), v: clamp(hsv.v + step[1]) })
-  }
-
-  return (
-    <div className="field color-field" data-type="color" ref={root}>
-      <span id={id}>{label}</span>
-      <button
-        type="button"
-        className="swatch"
-        aria-labelledby={id}
-        aria-expanded={open}
-        style={{ background: value }}
-        onClick={toggle}
-      />
-      <div className="picker" data-open={open} role="dialog" aria-labelledby={id}>
-        <div
-          className="sv"
-          tabIndex={0}
-          role="slider"
-          aria-label="Saturation and brightness"
-          aria-valuetext={`Saturation ${Math.round(hsv.s * 100)}%, brightness ${Math.round(hsv.v * 100)}%`}
-          style={{ '--hue': hsv.h } as CSSProperties}
-          onPointerDown={pick}
-          onPointerMove={pick}
-          onKeyDown={nudge}
-        >
-          <i style={{ left: `${hsv.s * 100}%`, top: `${(1 - hsv.v) * 100}%`, background: value }} />
-        </div>
-        <Range className="hue" min={0} max={359} aria-label="Hue" value={Math.round(hsv.h)} onChange={(h) => apply({ ...hsv, h })} />
-        <div className="presets">
-          {presets.map((color) => (
-            <button
-              key={color}
-              type="button"
-              aria-label={color}
-              aria-pressed={color === value}
-              style={{ background: color }}
-              onClick={() => apply(hexToHsv(color))}
-            />
-          ))}
-        </div>
-        <input
-          className="hex"
-          type="text"
-          aria-label="Hex color"
-          spellCheck={false}
-          value={draft}
-          onChange={(event) => {
-            setDraft(event.target.value)
-            if (isHex(event.target.value)) apply(hexToHsv(event.target.value.toLowerCase()))
-          }}
-        />
-      </div>
-    </div>
-  )
-}
-
 function Draggable({ children, style }: { children: ReactNode; style?: CSSProperties }) {
   const [offset, setOffset] = useState({ x: 0, y: 0 })
 
@@ -530,28 +433,24 @@ function Draggable({ children, style }: { children: ReactNode; style?: CSSProper
 
 function Snippet({ label, text }: { label: string; text: string }) {
   const [copied, setCopied] = useState(false)
-  const copy = async () => {
-    await navigator.clipboard.writeText(text)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 1500)
-  }
+  const name = `Copy ${label.toLowerCase()}`
 
   return (
     <figure className="snippet">
       <figcaption>
         {label}
-        <button
-          type="button"
-          className="btn icon-btn"
-          aria-label={copied ? 'Copied' : `Copy ${label.toLowerCase()}`}
-          data-tip={`Copy ${label.toLowerCase()}`}
-          data-copied={copied}
-          onClick={copy}
-        >
-          <span key={String(copied)} className="swap">
-            <Svg d={copied ? icons.check : icons.copy} />
-          </span>
-        </button>
+        <Tooltip content={copied ? 'Copied!' : name} align="end">
+          <FeedbackButton
+            className="btn icon-btn"
+            aria-label={copied ? 'Copied' : name}
+            action={() => navigator.clipboard.writeText(text)}
+            busy={<Svg d={icons.copy} />}
+            done={<Svg d={icons.check} />}
+            onStateChange={(state) => setCopied(state === 'done')}
+          >
+            <Svg d={icons.copy} />
+          </FeedbackButton>
+        </Tooltip>
       </figcaption>
       <pre>{text}</pre>
     </figure>
