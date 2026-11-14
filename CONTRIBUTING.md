@@ -35,11 +35,18 @@ what to check.
 
 ### Adding a component
 
-1. Create `packages/<name>` with a `package.json`, `src/index.ts` and the
-   component, built on `GlassSurface` from `@crystal-design/glass`.
-2. Add an entry to `playground/src/catalog.tsx` with its controls, preview and
+Names follow one pattern: a component called Glass Tabs lives in
+`packages/tabs-glass`, is published as `@crystal-design/tabs-glass`, exports
+`GlassTabs` from `src/GlassTabs.tsx`, and has the playground id `tabs-glass`.
+
+1. Create `packages/<name>-glass` with a `package.json`, `src/index.ts` and
+   the component, built on `GlassSurface` from `@crystal-design/surface-glass`.
+2. Re-export it from `packages/glass/src/index.ts`, add it to that package's
+   dependencies, and add it to the root `build` script.
+3. Add an entry to `playground/src/catalog.tsx` with its controls, preview and
    code snippet.
-3. Add it to the [Features](README.md#features) list in the README.
+4. Add it to the [Features](README.md#features) list in the README and bump
+   the components badge.
 
 Crystal Design aims to stay small: no runtime dependencies besides React.
 Avoid adding one unless it clearly pulls its weight.
