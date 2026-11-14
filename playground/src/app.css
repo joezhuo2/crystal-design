@@ -360,3 +360,20 @@ pre {
     transition: none;
   }
 }
+
+.preview::before,
+.thumb::before {
+  content: 'Glass';
+  color: rgb(255 255 255 / 0.4);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  font-size: 120px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.thumb::before {
+  font-size: 64px;
+}
