@@ -1,0 +1,34 @@
+:where(.root) {
+  position: relative;
+  display: inline-block;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.fade {
+  transition: opacity var(--gt-fade, 300ms) linear;
+}
+
+.copy {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+
+.red {
+  color: var(--cd-glitch-a, #ff2d55);
+}
+
+.cyan {
+  color: var(--cd-glitch-b, #00e5ff);
+}
+
+.svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
