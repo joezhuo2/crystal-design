@@ -1,10 +1,10 @@
 import { useState, type ReactNode } from 'react'
-import { Button } from '@crystal-design/button'
-import { Card } from '@crystal-design/card'
-import { GlassSurface } from '@crystal-design/glass'
-import { Icon } from '@crystal-design/icon'
-import { Navbar } from '@crystal-design/navbar'
-import { Sidebar, SidebarItem, type SidebarProps } from '@crystal-design/sidebar'
+import { GlassButton } from '@crystal-design/button-glass'
+import { GlassCard } from '@crystal-design/card-glass'
+import { GlassSurface } from '@crystal-design/surface-glass'
+import { GlassIcon } from '@crystal-design/icon-glass'
+import { GlassNavbar } from '@crystal-design/navbar-glass'
+import { GlassSidebar, GlassSidebarItem, type GlassSidebarProps } from '@crystal-design/sidebar-glass'
 
 export type Values = Record<string, string | number | boolean>
 
@@ -99,12 +99,12 @@ const sidebarItems = [
   { label: 'Favorites', glyph: glyphs.star },
 ]
 
-function SidebarDemo(props: SidebarProps) {
+function SidebarDemo(props: GlassSidebarProps) {
   const [active, setActive] = useState('Home')
   return (
-    <Sidebar {...props} aria-label="Demo">
+    <GlassSidebar {...props} aria-label="Demo">
       {sidebarItems.map((item) => (
-        <SidebarItem
+        <GlassSidebarItem
           key={item.label}
           icon={<Glyph d={item.glyph} />}
           label={item.label}
@@ -112,14 +112,14 @@ function SidebarDemo(props: SidebarProps) {
           onClick={() => setActive(item.label)}
         />
       ))}
-    </Sidebar>
+    </GlassSidebar>
   )
 }
 
 const surface: Entry = {
-  id: 'glass',
-  name: 'Surface (Liquid Glass)',
-  pkg: '@crystal-design/glass',
+  id: 'surface-glass',
+  name: 'Glass Surface',
+  pkg: '@crystal-design/surface-glass',
   category: 'Surfaces',
   description: 'Core panel that bends what is behind it.',
   controls: [
@@ -128,15 +128,15 @@ const surface: Entry = {
     { key: 'height', label: 'Height', type: 'range', min: 60, max: 300, value: 120 },
   ],
   render: (v) => <GlassSurface {...glassProps(v)} style={{ width: v.width as number, height: v.height as number }} />,
-  code: (v) => `import { GlassSurface } from '@crystal-design/glass'
+  code: (v) => `import { GlassSurface } from '@crystal-design/surface-glass'
 
 <GlassSurface${glassAttrs(surface, v)}${styleAttr({ width: v.width as number, height: v.height as number })} />`,
 }
 
 const button: Entry = {
-  id: 'button',
-  name: 'Button (Liquid Glass)',
-  pkg: '@crystal-design/button',
+  id: 'button-glass',
+  name: 'Glass Button',
+  pkg: '@crystal-design/button-glass',
   category: 'Actions',
   description: 'Glass button with hover and press states.',
   controls: [
@@ -146,19 +146,19 @@ const button: Entry = {
     { key: 'disabled', label: 'Disabled', type: 'toggle', value: false },
   ],
   render: (v) => (
-    <Button {...glassProps(v)} disabled={v.disabled as boolean} style={{ paddingInline: v.padding as number }}>
+    <GlassButton {...glassProps(v)} disabled={v.disabled as boolean} style={{ paddingInline: v.padding as number }}>
       {v.label}
-    </Button>
+    </GlassButton>
   ),
-  code: (v) => `import { Button } from '@crystal-design/button'
+  code: (v) => `import { GlassButton } from '@crystal-design/button-glass'
 
-<Button${glassAttrs(button, v)}${styleAttr({ paddingInline: changed(button, v, 'padding') && (v.padding as number) })}${v.disabled ? ' disabled' : ''}>${v.label}</Button>`,
+<GlassButton${glassAttrs(button, v)}${styleAttr({ paddingInline: changed(button, v, 'padding') && (v.padding as number) })}${v.disabled ? ' disabled' : ''}>${v.label}</GlassButton>`,
 }
 
 const card: Entry = {
-  id: 'card',
-  name: 'Card (Liquid Glass)',
-  pkg: '@crystal-design/card',
+  id: 'card-glass',
+  name: 'Glass Card',
+  pkg: '@crystal-design/card-glass',
   category: 'Surfaces',
   description: 'Padded panel for text, media or actions.',
   controls: [
@@ -169,23 +169,23 @@ const card: Entry = {
     { key: 'body', label: 'Body', type: 'text', value: 'Content stays sharp while the rim bends the page behind it.' },
   ],
   render: (v) => (
-    <Card {...glassProps(v)} style={{ maxWidth: v.width as number, padding: v.padding as number }}>
+    <GlassCard {...glassProps(v)} style={{ maxWidth: v.width as number, padding: v.padding as number }}>
       <h3>{v.title}</h3>
       <p>{v.body}</p>
-    </Card>
+    </GlassCard>
   ),
-  code: (v) => `import { Card } from '@crystal-design/card'
+  code: (v) => `import { GlassCard } from '@crystal-design/card-glass'
 
-<Card${glassAttrs(card, v)}${styleAttr({ maxWidth: v.width as number, padding: changed(card, v, 'padding') && (v.padding as number) })}>
+<GlassCard${glassAttrs(card, v)}${styleAttr({ maxWidth: v.width as number, padding: changed(card, v, 'padding') && (v.padding as number) })}>
   <h3>${v.title}</h3>
   <p>${v.body}</p>
-</Card>`,
+</GlassCard>`,
 }
 
 const navbar: Entry = {
-  id: 'navbar',
-  name: 'Navbar (Liquid Glass)',
-  pkg: '@crystal-design/navbar',
+  id: 'navbar-glass',
+  name: 'Glass Navbar',
+  pkg: '@crystal-design/navbar-glass',
   category: 'Navigation',
   description: 'Top bar pinned while the page scrolls.',
   controls: [
@@ -194,47 +194,47 @@ const navbar: Entry = {
     { key: 'brand', label: 'Brand', type: 'text', value: 'Crystal' },
   ],
   render: (v) => (
-    <Navbar {...glassProps(v)} aria-label="Demo" style={{ gap: v.gap as number }}>
-      <a href="#/navbar">
+    <GlassNavbar {...glassProps(v)} aria-label="Demo" style={{ gap: v.gap as number }}>
+      <a href="#/navbar-glass">
         <strong>{v.brand}</strong>
       </a>
-      <a href="#/navbar">Docs</a>
-      <a href="#/navbar">Pricing</a>
-    </Navbar>
+      <a href="#/navbar-glass">Docs</a>
+      <a href="#/navbar-glass">Pricing</a>
+    </GlassNavbar>
   ),
-  code: (v) => `import { Navbar } from '@crystal-design/navbar'
+  code: (v) => `import { GlassNavbar } from '@crystal-design/navbar-glass'
 
-<Navbar${glassAttrs(navbar, v)}${styleAttr({ gap: changed(navbar, v, 'gap') && (v.gap as number) })} aria-label="Main">
+<GlassNavbar${glassAttrs(navbar, v)}${styleAttr({ gap: changed(navbar, v, 'gap') && (v.gap as number) })} aria-label="Main">
   <a href="/"><strong>${v.brand}</strong></a>
   <a href="/docs">Docs</a>
   <a href="/pricing">Pricing</a>
-</Navbar>`,
+</GlassNavbar>`,
 }
 
 const sidebar: Entry = {
-  id: 'sidebar',
-  name: 'Sidebar (Liquid Glass)',
-  pkg: '@crystal-design/sidebar',
+  id: 'sidebar-glass',
+  name: 'Glass Sidebar',
+  pkg: '@crystal-design/sidebar-glass',
   category: 'Navigation',
   description: 'Icon rail that expands on hover.',
   controls: [...glassControls(12, 32), { key: 'padding', label: 'Padding', type: 'range', min: 4, max: 16, value: 10 }],
   render: (v) => <SidebarDemo {...glassProps(v)} style={{ padding: v.padding as number }} />,
   code: (v) => `import { useState } from 'react'
-import { Sidebar, SidebarItem } from '@crystal-design/sidebar'
+import { GlassSidebar, GlassSidebarItem } from '@crystal-design/sidebar-glass'
 
 const [active, setActive] = useState('Home')
 
-<Sidebar${glassAttrs(sidebar, v)}${styleAttr({ padding: changed(sidebar, v, 'padding') && (v.padding as number) })} aria-label="Sections">
-  <SidebarItem icon={<HomeIcon />} label="Home" active={active === 'Home'} onClick={() => setActive('Home')} />
-  <SidebarItem icon={<GridIcon />} label="Components" active={active === 'Components'} onClick={() => setActive('Components')} />
-  <SidebarItem icon={<StarIcon />} label="Favorites" active={active === 'Favorites'} onClick={() => setActive('Favorites')} />
-</Sidebar>`,
+<GlassSidebar${glassAttrs(sidebar, v)}${styleAttr({ padding: changed(sidebar, v, 'padding') && (v.padding as number) })} aria-label="Sections">
+  <GlassSidebarItem icon={<HomeIcon />} label="Home" active={active === 'Home'} onClick={() => setActive('Home')} />
+  <GlassSidebarItem icon={<GridIcon />} label="Components" active={active === 'Components'} onClick={() => setActive('Components')} />
+  <GlassSidebarItem icon={<StarIcon />} label="Favorites" active={active === 'Favorites'} onClick={() => setActive('Favorites')} />
+</GlassSidebar>`,
 }
 
 const icon: Entry = {
-  id: 'icon',
-  name: 'Icon (Liquid Glass)',
-  pkg: '@crystal-design/icon',
+  id: 'icon-glass',
+  name: 'Glass Icon',
+  pkg: '@crystal-design/icon-glass',
   category: 'Surfaces',
   description: 'Glass tile around a glyph or logo.',
   controls: [
@@ -244,15 +244,15 @@ const icon: Entry = {
     { key: 'bezel', label: 'Bezel', type: 'range', min: 4, max: 40, value: 20 },
   ],
   render: (v) => (
-    <Icon size={v.size as number} {...glassProps(v)} label="Favorite">
+    <GlassIcon size={v.size as number} {...glassProps(v)} label="Favorite">
       <Glyph d={glyphs.star} />
-    </Icon>
+    </GlassIcon>
   ),
-  code: (v) => `import { Icon } from '@crystal-design/icon'
+  code: (v) => `import { GlassIcon } from '@crystal-design/icon-glass'
 
-<Icon size={${v.size}}${glassAttrs(icon, v)} label="Favorite">
+<GlassIcon size={${v.size}}${glassAttrs(icon, v)} label="Favorite">
   <StarIcon />
-</Icon>`,
+</GlassIcon>`,
 }
 
 export const catalog: Entry[] = [surface, button, card, navbar, sidebar, icon]
