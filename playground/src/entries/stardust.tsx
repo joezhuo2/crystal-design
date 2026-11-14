@@ -6,6 +6,7 @@ export const entry: Entry = {
   name: 'Stardust',
   pkg: '@crystal-design/stardust',
   category: 'Effects',
+  hover: true,
   description: 'Twinkling particle trail that follows the cursor inside a container or the whole window.',
   glass: false,
   controls: [

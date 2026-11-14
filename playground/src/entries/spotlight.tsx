@@ -6,6 +6,7 @@ export const entry: Entry = {
   name: 'Spotlight',
   pkg: '@crystal-design/spotlight',
   category: 'Effects',
+  hover: true,
   description: 'Cursor-lit border and inner glow that follow the pointer across a surface.',
   controls: [
     { key: 'on', label: 'Spotlight', type: 'toggle', value: true },

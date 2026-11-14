@@ -694,6 +694,15 @@ pre {
   letter-spacing: -0.04em;
 }
 
+.thumb[data-glass='false']::before {
+  content: none;
+}
+
+.thumb[data-hover] {
+  z-index: 1;
+  cursor: pointer;
+}
+
 main {
   view-transition-name: page;
 }

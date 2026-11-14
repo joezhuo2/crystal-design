@@ -16,6 +16,7 @@ export type Entry = {
   category: string
   description: string
   glass?: boolean
+  hover?: boolean
   controls: Control[]
   render: (values: Values) => ReactNode
   code: (values: Values) => string
