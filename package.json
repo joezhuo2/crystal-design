@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "dev": "npm run dev -w playground",
-    "build": "npm run build -w @crystal-design/surface-glass && npm run build -w @crystal-design/button-glass -w @crystal-design/card-glass -w @crystal-design/icon-glass -w @crystal-design/navbar-glass -w @crystal-design/sidebar-glass && npm run build -w @crystal-design/glass -w playground",
-    "test": "node --test packages/surface-glass/src/maps.test.ts playground/src/color.test.ts",
+    "build": "npm run build -w @crystal-design/smooth-scroll -w @crystal-design/tooltip -w @crystal-design/feedback-button -w @crystal-design/color-picker -w @crystal-design/checkbox -w @crystal-design/position -w @crystal-design/spotlight -w @crystal-design/stardust -w @crystal-design/animated-number && npm run build -w @crystal-design/surface-glass && npm run build -w @crystal-design/button-glass -w @crystal-design/card-glass -w @crystal-design/icon-glass -w @crystal-design/navbar-glass -w @crystal-design/sidebar-glass -w @crystal-design/tabs-glass -w @crystal-design/select-glass -w @crystal-design/tooltip-glass -w @crystal-design/menu-glass -w @crystal-design/modal-glass -w @crystal-design/toast-glass -w @crystal-design/command-palette-glass -w @crystal-design/switch-glass -w @crystal-design/skeleton-glass -w @crystal-design/accordion-glass -w @crystal-design/island-glass && npm run build -w @crystal-design/glass -w playground",
+    "test": "node --test packages/surface-glass/src/maps.test.ts packages/color-picker/src/color.test.ts packages/position/src/place.test.ts packages/toast-glass/src/store.test.ts packages/command-palette-glass/src/filter.test.ts packages/animated-number/src/tween.test.ts",
     "typecheck": "tsc -p playground"
   },
   "devDependencies": {

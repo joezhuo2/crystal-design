@@ -1,10 +1,12 @@
 {
   "name": "@crystal-design/glass",
   "version": "0.1.0",
-  "description": "Every Crystal Design liquid glass component for React in one package",
+  "description": "Every Crystal Design component for React in one package",
   "type": "module",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -17,15 +19,36 @@
     "build": "vite build --config ../../vite.lib.ts && tsc -p ."
   },
   "dependencies": {
+    "@crystal-design/accordion-glass": "^0.1.0",
+    "@crystal-design/animated-number": "^0.1.0",
     "@crystal-design/button-glass": "^0.1.0",
     "@crystal-design/card-glass": "^0.1.0",
+    "@crystal-design/checkbox": "^0.1.0",
+    "@crystal-design/color-picker": "^0.1.0",
+    "@crystal-design/command-palette-glass": "^0.1.0",
+    "@crystal-design/feedback-button": "^0.1.0",
     "@crystal-design/icon-glass": "^0.1.0",
+    "@crystal-design/island-glass": "^0.1.0",
+    "@crystal-design/menu-glass": "^0.1.0",
+    "@crystal-design/modal-glass": "^0.1.0",
     "@crystal-design/navbar-glass": "^0.1.0",
+    "@crystal-design/position": "^0.1.0",
+    "@crystal-design/select-glass": "^0.1.0",
     "@crystal-design/sidebar-glass": "^0.1.0",
-    "@crystal-design/surface-glass": "^0.1.0"
+    "@crystal-design/skeleton-glass": "^0.1.0",
+    "@crystal-design/smooth-scroll": "^0.1.0",
+    "@crystal-design/spotlight": "^0.1.0",
+    "@crystal-design/stardust": "^0.1.0",
+    "@crystal-design/surface-glass": "^0.1.0",
+    "@crystal-design/switch-glass": "^0.1.0",
+    "@crystal-design/tabs-glass": "^0.1.0",
+    "@crystal-design/toast-glass": "^0.1.0",
+    "@crystal-design/tooltip": "^0.1.0",
+    "@crystal-design/tooltip-glass": "^0.1.0"
   },
   "peerDependencies": {
-    "react": ">=18"
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "publishConfig": {
     "access": "public"
