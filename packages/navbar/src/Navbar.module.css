@@ -1,0 +1,30 @@
+.navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  max-width: calc(100vw - 32px);
+}
+
+.navbar a {
+  color: inherit;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
