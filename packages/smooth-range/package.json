@@ -1,0 +1,29 @@
+{
+  "name": "@crystal-design/smooth-range",
+  "version": "0.1.0",
+  "description": "Range input that eases toward the clicked value for React",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build --config ../../vite.lib.ts && tsc -p ."
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
