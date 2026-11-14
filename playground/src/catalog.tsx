@@ -28,8 +28,8 @@ const GLASS_KEYS = ['radius', 'strength', 'bezel']
 
 const glassControls = (radius: number, maxRadius: number): Control[] => [
   { key: 'radius', label: 'Radius', type: 'range', min: 0, max: maxRadius, value: radius },
-  { key: 'strength', label: 'Refraction', type: 'range', min: 0, max: 120, value: 48 },
-  { key: 'bezel', label: 'Bezel', type: 'range', min: 4, max: 40, value: 18 },
+  { key: 'strength', label: 'Refraction', type: 'range', min: 0, max: 120, value: 30 },
+  { key: 'bezel', label: 'Bezel', type: 'range', min: 4, max: 40, value: 20 },
 ]
 
 const glassProps = (v: Values) => ({
@@ -60,25 +60,25 @@ function Glyph({ d }: { d: string }) {
 
 const surface: Entry = {
   id: 'glass',
-  name: 'Glass Surface',
+  name: 'Surface (Liquid Glass)',
   pkg: '@crystal-design/glass',
   category: 'Surfaces',
-  description: 'The core panel. Bends whatever is behind it. Pass mask to cut it to any logo shape.',
-  controls: glassControls(6, 80),
-  render: (v) => <GlassSurface {...glassProps(v)} style={{ width: 240, height: 160 }} />,
+  description: 'Core panel that bends what is behind it.',
+  controls: glassControls(10, 80),
+  render: (v) => <GlassSurface {...glassProps(v)} style={{ width: 200, height: 120 }} />,
   code: (v) => `import { GlassSurface } from '@crystal-design/glass'
 
-<GlassSurface${glassAttrs(surface, v)} style={{ width: 240, height: 160 }} />`,
+<GlassSurface${glassAttrs(surface, v)} style={{ width: 200, height: 120 }} />`,
 }
 
 const button: Entry = {
   id: 'button',
-  name: 'Button',
+  name: 'Button (Liquid Glass)',
   pkg: '@crystal-design/button',
   category: 'Actions',
-  description: 'Glass button with hover, press, focus and disabled states.',
+  description: 'Glass button with hover and press states.',
   controls: [
-    ...glassControls(6, 23),
+    ...glassControls(10, 23),
     { key: 'label', label: 'Label', type: 'text', value: 'Get started' },
     { key: 'disabled', label: 'Disabled', type: 'toggle', value: false },
   ],
@@ -94,17 +94,17 @@ const button: Entry = {
 
 const card: Entry = {
   id: 'card',
-  name: 'Card',
+  name: 'Card (Liquid Glass)',
   pkg: '@crystal-design/card',
   category: 'Surfaces',
-  description: 'Padded content panel for text, media or actions.',
+  description: 'Padded panel for text, media or actions.',
   controls: [
-    ...glassControls(8, 64),
+    ...glassControls(10, 64),
     { key: 'title', label: 'Title', type: 'text', value: 'Liquid glass' },
     { key: 'body', label: 'Body', type: 'text', value: 'Content stays sharp while the rim bends the page behind it.' },
   ],
   render: (v) => (
-    <Card {...glassProps(v)} style={{ maxWidth: 300 }}>
+    <Card {...glassProps(v)} style={{ maxWidth: 250 }}>
       <h3>{v.title}</h3>
       <p>{v.body}</p>
     </Card>
@@ -119,11 +119,11 @@ const card: Entry = {
 
 const navbar: Entry = {
   id: 'navbar',
-  name: 'Navbar',
+  name: 'Navbar (Liquid Glass)',
   pkg: '@crystal-design/navbar',
   category: 'Navigation',
-  description: 'Top bar pinned to the viewport while the page scrolls behind it.',
-  controls: [...glassControls(8, 27), { key: 'brand', label: 'Brand', type: 'text', value: 'Crystal' }],
+  description: 'Top bar pinned while the page scrolls.',
+  controls: [...glassControls(10, 27), { key: 'brand', label: 'Brand', type: 'text', value: 'Crystal' }],
   render: (v) => (
     <Navbar {...glassProps(v)} aria-label="Demo">
       <a href="#/navbar">
@@ -144,11 +144,11 @@ const navbar: Entry = {
 
 const sidebar: Entry = {
   id: 'sidebar',
-  name: 'Sidebar',
+  name: 'Sidebar (Liquid Glass)',
   pkg: '@crystal-design/sidebar',
   category: 'Navigation',
-  description: 'Pinned icon rail that expands to show labels on hover or keyboard focus.',
-  controls: glassControls(8, 32),
+  description: 'Icon rail that expands on hover.',
+  controls: glassControls(10, 32),
   render: (v) => (
     <Sidebar {...glassProps(v)} aria-label="Demo">
       <SidebarItem icon={<Glyph d={glyphs.home} />} label="Home" href="#/sidebar" active />
@@ -167,14 +167,14 @@ const sidebar: Entry = {
 
 const icon: Entry = {
   id: 'icon',
-  name: 'Icon',
+  name: 'Icon (Liquid Glass)',
   pkg: '@crystal-design/icon',
   category: 'Surfaces',
-  description: 'Glass tile around a glyph. Pass src to cut the glass to a logo shape instead.',
+  description: 'Glass tile around a glyph or logo.',
   controls: [
     { key: 'size', label: 'Size', type: 'range', min: 32, max: 240, value: 96 },
-    { key: 'strength', label: 'Refraction', type: 'range', min: 0, max: 120, value: 48 },
-    { key: 'bezel', label: 'Bezel', type: 'range', min: 4, max: 40, value: 18 },
+    { key: 'strength', label: 'Refraction', type: 'range', min: 0, max: 120, value: 30 },
+    { key: 'bezel', label: 'Bezel', type: 'range', min: 4, max: 40, value: 20 },
   ],
   render: (v) => (
     <Icon size={v.size as number} strength={v.strength as number} bezel={v.bezel as number} label="Favorite">
@@ -189,3 +189,6 @@ const icon: Entry = {
 }
 
 export const catalog: Entry[] = [surface, button, card, navbar, sidebar, icon]
+
+export const defaultsOf = (entry: Entry): Values =>
+  Object.fromEntries(entry.controls.map((control) => [control.key, control.value]))

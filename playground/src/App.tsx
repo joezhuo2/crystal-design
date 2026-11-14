@@ -1,8 +1,7 @@
 import { useRef, useState, useSyncExternalStore, type PointerEvent, type ReactNode } from 'react'
-import { Card } from '@crystal-design/card'
-import { catalog, type Entry, type Values } from './catalog'
+import { catalog, defaultsOf, type Entry, type Values } from './catalog'
 
-const words = ['Refraction', 'Liquid', 'Crystal', 'Glass', 'Depth', 'Light']
+const backdrop = [1, 2, 3, 4, 5, 6]
 const categories = ['All', ...new Set(catalog.map((entry) => entry.category))]
 
 const subscribe = (notify: () => void) => {
@@ -68,14 +67,13 @@ function List() {
         <ul className="grid">
           {items.map((entry) => (
             <li key={entry.id}>
-              <a href={`#/${entry.id}`}>
-                <Card>
-                  <span className="tag">{entry.category}</span>
-                  <h2>{entry.name}</h2>
-                  <p>{entry.description}</p>
-                  <code>{entry.pkg}</code>
-                </Card>
-              </a>
+              <div className="thumb" inert>
+                <div className="thumb-stage">{entry.render(defaultsOf(entry))}</div>
+              </div>
+              <h2>
+                <a href={`#/${entry.id}`}>{entry.name}</a>
+              </h2>
+              <p>{entry.description}</p>
             </li>
           ))}
         </ul>
@@ -87,9 +85,7 @@ function List() {
 }
 
 function Detail({ entry }: { entry: Entry }) {
-  const [values, setValues] = useState<Values>(() =>
-    Object.fromEntries(entry.controls.map((control) => [control.key, control.value])),
-  )
+  const [values, setValues] = useState<Values>(() => defaultsOf(entry))
   const [view, setView] = useState<'preview' | 'code'>('preview')
   const set = (key: string, value: Values[string]) => setValues((current) => ({ ...current, [key]: value }))
 
@@ -127,8 +123,8 @@ It is a liquid glass surface that refracts whatever is behind it, so place it ov
             <div className="overlay">
               <Draggable>{entry.render(values)}</Draggable>
             </div>
-            {words.map((word) => (
-              <section key={word}>{word}</section>
+            {backdrop.map((id) => (
+              <section key={id} />
             ))}
           </div>
         ) : (
