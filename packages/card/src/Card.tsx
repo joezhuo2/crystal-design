@@ -3,7 +3,7 @@ import styles from './Card.module.css'
 
 export type CardProps = Omit<GlassSurfaceProps<'div'>, 'as'>
 
-export function Card({ radius = 28, className, ...rest }: CardProps) {
+export function Card({ radius = 8, className, ...rest }: CardProps) {
   return (
     <GlassSurface
       radius={radius}

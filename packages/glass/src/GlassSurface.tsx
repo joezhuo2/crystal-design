@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from 'react'
 import styles from './GlassSurface.module.css'
-import { encodeMaps } from './maps'
+import { encodeMap, encodeRim } from './maps'
 
 type OwnProps = {
   radius?: number
@@ -23,11 +23,11 @@ export type GlassSurfaceProps<T extends ElementType = 'div'> = OwnProps & { as?:
     keyof OwnProps | 'as'
   >
 
-type Maps = { w: number; h: number; map: string; rim: string }
+type Maps = { w: number; h: number; map: string; rim?: string }
 
 export function GlassSurface<T extends ElementType = 'div'>({
   as,
-  radius = 24,
+  radius = 6,
   mask,
   strength = 48,
   bezel = 18,
@@ -50,30 +50,39 @@ export function GlassSurface<T extends ElementType = 'div'>({
       const w = el.offsetWidth
       const h = el.offsetHeight
       if (!w || !h) return
+      const ratio = Math.min(window.devicePixelRatio || 1, 2)
+      const cw = Math.round(w * ratio)
+      const ch = Math.round(h * ratio)
       const canvas = document.createElement('canvas')
-      canvas.width = w
-      canvas.height = h
+      canvas.width = cw
+      canvas.height = ch
       const ctx = canvas.getContext('2d', { willReadFrequently: true })
       if (!ctx) return
-      const sigma = bezel / 2
-      ctx.filter = `blur(${sigma}px)`
-      if (image) {
-        const fit = Math.min(w / image.naturalWidth, h / image.naturalHeight)
-        const iw = image.naturalWidth * fit
-        const ih = image.naturalHeight * fit
-        ctx.drawImage(image, (w - iw) / 2, (h - ih) / 2, iw, ih)
-      } else {
-        ctx.beginPath()
-        ctx.roundRect(0, 0, w, h, Math.min(radius, w / 2, h / 2))
-        ctx.fill()
+      const alpha = (sigma: number) => {
+        ctx.clearRect(0, 0, cw, ch)
+        ctx.filter = `blur(${sigma}px)`
+        if (image) {
+          const fit = Math.min(cw / image.naturalWidth, ch / image.naturalHeight)
+          const iw = image.naturalWidth * fit
+          const ih = image.naturalHeight * fit
+          ctx.drawImage(image, (cw - iw) / 2, (ch - ih) / 2, iw, ih)
+        } else {
+          ctx.beginPath()
+          ctx.roundRect(0, 0, cw, ch, Math.min(radius, w / 2, h / 2) * ratio)
+          ctx.fill()
+        }
+        return ctx.getImageData(0, 0, cw, ch).data
       }
+      const softSigma = (bezel / 2) * ratio
+      const sharpSigma = 0.75 * ratio
       try {
-        const out = encodeMaps(ctx.getImageData(0, 0, w, h).data, w, h, sigma)
         const toUrl = (pixels: Uint8ClampedArray<ArrayBuffer>) => {
-          ctx.putImageData(new ImageData(pixels, w, h), 0, 0)
+          ctx.putImageData(new ImageData(pixels, cw, ch), 0, 0)
           return canvas.toDataURL()
         }
-        setMaps({ w, h, map: toUrl(out.map), rim: toUrl(out.rim) })
+        const map = toUrl(encodeMap(alpha(softSigma), cw, ch, softSigma))
+        const rim = image && toUrl(encodeRim(alpha(sharpSigma), cw, ch, sharpSigma))
+        setMaps({ w, h, map, rim })
       } catch {
         setMaps(undefined)
       }
@@ -97,7 +106,6 @@ export function GlassSurface<T extends ElementType = 'div'>({
   return (
     <Tag
       ref={ref}
-      data-refract={maps ? '' : undefined}
       className={[styles.glass, className].filter(Boolean).join(' ')}
       style={{
         borderRadius: mask ? undefined : radius,
@@ -130,7 +138,9 @@ export function GlassSurface<T extends ElementType = 'div'>({
               />
             </filter>
           </svg>
-          <span className={styles.rim} style={{ backgroundImage: `url(${maps.rim})` }} aria-hidden="true" />
+          {maps.rim && (
+            <span className={styles.rim} style={{ backgroundImage: `url(${maps.rim})` }} aria-hidden="true" />
+          )}
         </>
       )}
       {children}
