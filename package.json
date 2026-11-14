@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "npm run dev -w playground",
     "build": "npm run build -w @crystal-design/glass && npm run build -ws",
-    "test": "node --test packages/glass/src/maps.test.ts",
+    "test": "node --test packages/glass/src/maps.test.ts playground/src/color.test.ts",
     "typecheck": "tsc -p playground"
   },
   "devDependencies": {
