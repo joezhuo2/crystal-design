@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "description": "Liquid glass surface for React that refracts whatever is behind it",
   "type": "module",
-  "sideEffects": ["**/*.css"],
-  "files": ["dist"],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -21,5 +25,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@crystal-design/spotlight": "^0.1.0"
   }
 }

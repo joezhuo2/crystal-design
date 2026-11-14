@@ -7,6 +7,7 @@ import {
   type ElementType,
   type ReactNode,
 } from 'react'
+import { useSpotlight } from '@crystal-design/spotlight'
 import styles from './GlassSurface.module.css'
 import { encodeMap, encodeRim } from './maps'
 
@@ -15,6 +16,7 @@ type OwnProps = {
   mask?: string
   strength?: number
   bezel?: number
+  spotlight?: boolean | string
   children?: ReactNode
 }
 
@@ -31,6 +33,7 @@ export function GlassSurface<T extends ElementType = 'div'>({
   mask,
   strength = 30,
   bezel = 20,
+  spotlight,
   className,
   style,
   children,
@@ -40,6 +43,7 @@ export function GlassSurface<T extends ElementType = 'div'>({
   const ref = useRef<HTMLElement>(null)
   const id = `cg-${useId().replace(/[^a-zA-Z0-9]/g, '')}`
   const [maps, setMaps] = useState<Maps>()
+  useSpotlight(ref, !!spotlight)
 
   useEffect(() => {
     const el = ref.current
@@ -98,16 +102,17 @@ export function GlassSurface<T extends ElementType = 'div'>({
 
   return (
     <Tag
+      {...rest}
       ref={ref}
-      className={[styles.glass, className].filter(Boolean).join(' ')}
+      className={[styles.glass, spotlight && styles.spot, className].filter(Boolean).join(' ')}
       style={{
         borderRadius: mask ? undefined : radius,
+        ...(typeof spotlight === 'string' && { '--cd-spot': spotlight }),
         mask: shape,
         WebkitMask: shape,
         ...(refraction && { backdropFilter: refraction }),
         ...style,
       }}
-      {...rest}
     >
       {maps && (
         <>
