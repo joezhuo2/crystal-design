@@ -1,0 +1,29 @@
+:where(.root) {
+  display: inline-flex;
+}
+
+.root[data-mode='stroke'] :is(path, line, polyline, polygon, circle, ellipse, rect) {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset var(--draw-duration, 400ms) var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1));
+}
+
+.root[data-mode='stroke'][data-show='true'] :is(path, line, polyline, polygon, circle, ellipse, rect) {
+  stroke-dashoffset: 0;
+}
+
+.root[data-mode='wipe'] {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path var(--draw-duration, 400ms) var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1)) var(--draw-delay, 0ms);
+}
+
+.root[data-mode='wipe'][data-show='true'] {
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root[data-mode='stroke'] :is(path, line, polyline, polygon, circle, ellipse, rect),
+  .root[data-mode='wipe'] {
+    transition: none !important;
+  }
+}

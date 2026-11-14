@@ -1,0 +1,67 @@
+:where(.root) {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  transition: width var(--swap-duration, 300ms) var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1));
+}
+
+:where(.in),
+:where(.out) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+:where(.in) {
+  animation: swap-in var(--swap-duration, 300ms) var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1));
+}
+
+:where(.out) {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: swap-out var(--swap-duration, 300ms) var(--cd-ease, cubic-bezier(0.2, 0.8, 0.2, 1)) forwards;
+}
+
+@keyframes swap-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--swap-in, 6px));
+    filter: blur(2px);
+  }
+}
+
+@keyframes swap-out {
+  to {
+    opacity: 0;
+    transform: translateY(var(--swap-out, -6px));
+    filter: blur(2px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.root) {
+    transition: none;
+  }
+
+  :where(.in) {
+    animation: fade-in var(--swap-duration, 300ms) linear;
+  }
+
+  :where(.out) {
+    animation: fade-out var(--swap-duration, 300ms) linear forwards;
+  }
+}
