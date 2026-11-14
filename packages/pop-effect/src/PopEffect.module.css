@@ -1,0 +1,39 @@
+:where(.root) {
+  display: block;
+}
+
+.root {
+  transform-origin: var(--pe-origin, center);
+}
+
+.root[data-phase='enter'] {
+  animation: pop-in var(--pe-duration, 260ms) var(--cd-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+
+.root[data-phase='exit'] {
+  animation: pop-out var(--pe-exit, 160ms) var(--cd-ease, ease-out) forwards;
+  pointer-events: none;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(var(--pe-scale, 0.9));
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes pop-out {
+  to {
+    opacity: 0;
+    transform: scale(calc(1 - (1 - var(--pe-scale, 0.9)) * 0.5));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root[data-phase] {
+    animation: none;
+  }
+}
