@@ -14,7 +14,7 @@
 }
 
 .sidebar:hover,
-.sidebar:focus-within {
+.sidebar:has(:focus-visible) {
   width: 220px;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .sidebar:hover .label,
-.sidebar:focus-within .label {
+.sidebar:has(:focus-visible) .label {
   opacity: 1;
 }
 
