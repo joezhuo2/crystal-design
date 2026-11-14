@@ -1,0 +1,4 @@
+:where(.disc) {
+  display: inline-grid;
+  place-items: center;
+}
