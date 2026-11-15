@@ -1,5 +1,5 @@
-import { ProgressRing, type ProgressRingProps } from '@crystal-design/progress-ring'
-import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/surface-glass'
+import { ProgressRing, type ProgressRingProps } from '@crystalflux/progress-ring'
+import { GlassSurface, type GlassSurfaceProps } from '@crystalflux/surface-glass'
 import styles from './GlassProgressRing.module.css'
 
 export type GlassProgressRingProps = ProgressRingProps &

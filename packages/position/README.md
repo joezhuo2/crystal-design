@@ -1,9 +1,9 @@
-# @crystal-design/position
+# @crystalflux/position
 
 Popup placement and dismiss helpers for React.
 
 ```bash
-npm install @crystal-design/position
+npm install @crystalflux/position
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/position) · [All components](https://github.com/joezhuo2/crystal-design#readme)

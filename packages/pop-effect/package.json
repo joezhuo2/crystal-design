@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/pop-effect",
+  "name": "@crystalflux/pop-effect",
   "version": "0.1.0",
   "description": "Springy scale and fade enter and exit with unmount for React",
   "license": "MIT",

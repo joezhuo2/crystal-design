@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react'
 import { createPortal } from 'react-dom'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import styles from './GlassCommandPalette.module.css'
 import { filterItems, type CommandItem } from './filter'
 

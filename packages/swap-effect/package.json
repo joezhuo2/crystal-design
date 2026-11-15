@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/swap-effect",
+  "name": "@crystalflux/swap-effect",
   "version": "0.1.0",
   "description": "Blur, fade and slide content swap with animated width for React",
   "license": "MIT",

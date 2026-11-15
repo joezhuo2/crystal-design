@@ -1,9 +1,9 @@
-# @crystal-design/toast-glass
+# @crystalflux/toast-glass
 
 Liquid glass toasts for React.
 
 ```bash
-npm install @crystal-design/toast-glass
+npm install @crystalflux/toast-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/toast-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

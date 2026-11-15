@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { GlassButton } from '@crystal-design/button-glass'
-import { GlassDrawer, GlassModal } from '@crystal-design/modal-glass'
+import { GlassButton } from '@crystalflux/button-glass'
+import { GlassDrawer, GlassModal } from '@crystalflux/modal-glass'
 import { changed, glassAttrs, glassControls, glassProps, type Entry, type Values } from '../entry'
 
 function ModalDemo({ v }: { v: Values }) {
@@ -32,7 +32,7 @@ function ModalDemo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'modal-glass',
   name: 'Glass Modal',
-  pkg: '@crystal-design/modal-glass',
+  pkg: '@crystalflux/modal-glass',
   category: 'Overlays',
   description: 'Native dialog modal and drawer on a glass panel.',
   controls: [
@@ -42,7 +42,7 @@ export const entry: Entry = {
   ],
   render: (v) => <ModalDemo v={v} />,
   code: (v) => `import { useState } from 'react'
-import { GlassModal, GlassDrawer } from '@crystal-design/modal-glass'
+import { GlassModal, GlassDrawer } from '@crystalflux/modal-glass'
 
 const [open, setOpen] = useState(false)
 

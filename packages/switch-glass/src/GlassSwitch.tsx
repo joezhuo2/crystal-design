@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import styles from './GlassSwitch.module.css'
 
 export type GlassSwitchProps = {

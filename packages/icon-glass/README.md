@@ -1,9 +1,9 @@
-# @crystal-design/icon-glass
+# @crystalflux/icon-glass
 
 Liquid glass icon tile for React.
 
 ```bash
-npm install @crystal-design/icon-glass
+npm install @crystalflux/icon-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/icon-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

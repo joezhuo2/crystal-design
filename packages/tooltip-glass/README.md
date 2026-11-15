@@ -1,9 +1,9 @@
-# @crystal-design/tooltip-glass
+# @crystalflux/tooltip-glass
 
 Liquid glass tooltip for React.
 
 ```bash
-npm install @crystal-design/tooltip-glass
+npm install @crystalflux/tooltip-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/tooltip-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

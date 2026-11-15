@@ -1,9 +1,9 @@
-# @crystal-design/timed-button-glass
+# @crystalflux/timed-button-glass
 
 Liquid glass action button with a timed undo window for React.
 
 ```bash
-npm install @crystal-design/timed-button-glass
+npm install @crystalflux/timed-button-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/timed-button-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

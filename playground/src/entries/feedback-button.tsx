@@ -1,4 +1,4 @@
-import { FeedbackButton } from '@crystal-design/feedback-button'
+import { FeedbackButton } from '@crystalflux/feedback-button'
 import { changed, type Entry } from '../entry'
 
 const Check = () => (
@@ -7,12 +7,12 @@ const Check = () => (
   </svg>
 )
 
-const SAMPLE = 'npm i @crystal-design/glass'
+const SAMPLE = 'npm i @crystalflux/glass'
 
 export const entry: Entry = {
   id: 'feedback-button',
   name: 'Feedback Button',
-  pkg: '@crystal-design/feedback-button',
+  pkg: '@crystalflux/feedback-button',
   category: 'Actions',
   description: 'A button that swaps to busy, done or error content while its action runs.',
   glass: false,
@@ -39,7 +39,7 @@ export const entry: Entry = {
   ),
   code(v) {
     const reset = changed(this, v, 'resetAfter') ? `\n  resetAfter={${v.resetAfter}}` : ''
-    return `import { FeedbackButton } from '@crystal-design/feedback-button'
+    return `import { FeedbackButton } from '@crystalflux/feedback-button'
 
 <FeedbackButton
   action={() => navigator.clipboard.writeText(text)}

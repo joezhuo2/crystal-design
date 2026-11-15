@@ -1,9 +1,9 @@
-# @crystal-design/command-palette-glass
+# @crystalflux/command-palette-glass
 
 Liquid glass command palette for React.
 
 ```bash
-npm install @crystal-design/command-palette-glass
+npm install @crystalflux/command-palette-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/command-palette-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

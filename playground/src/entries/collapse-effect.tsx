@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { CollapseEffect } from '@crystal-design/collapse-effect'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { CollapseEffect } from '@crystalflux/collapse-effect'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import { changed, type Entry } from '../entry'
 
 function Demo({ duration }: { duration: number }) {
@@ -25,7 +25,7 @@ function Demo({ duration }: { duration: number }) {
 export const entry: Entry = {
   id: 'collapse-effect',
   name: 'Collapse Effect',
-  pkg: '@crystal-design/collapse-effect',
+  pkg: '@crystalflux/collapse-effect',
   category: 'Effects',
   description: 'Animates the height of any content open and closed, keeping it mounted but inert while closed.',
   glass: false,
@@ -33,7 +33,7 @@ export const entry: Entry = {
   render: (v) => <Demo duration={v.duration as number} />,
   code(v) {
     const duration = changed(this, v, 'duration') ? ` duration={${v.duration}}` : ''
-    return `import { CollapseEffect } from '@crystal-design/collapse-effect'
+    return `import { CollapseEffect } from '@crystalflux/collapse-effect'
 
 <CollapseEffect open={open}${duration}>
   <p>Any content</p>

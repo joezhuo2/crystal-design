@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GlassContextMenu, GlassMenu, type GlassMenuItem } from '@crystal-design/menu-glass'
+import { GlassContextMenu, GlassMenu, type GlassMenuItem } from '@crystalflux/menu-glass'
 import { Glyph, glyphs, type Entry } from '../entry'
 
 const items = (log: (text: string) => void): GlassMenuItem[] => [
@@ -34,12 +34,12 @@ function MenuDemo() {
 export const entry: Entry = {
   id: 'menu-glass',
   name: 'Glass Menu',
-  pkg: '@crystal-design/menu-glass',
+  pkg: '@crystalflux/menu-glass',
   category: 'Overlays',
   description: 'Dropdown and context menu with a springy entrance and gliding highlight.',
   controls: [],
   render: () => <MenuDemo />,
-  code: () => `import { GlassMenu, GlassContextMenu } from '@crystal-design/menu-glass'
+  code: () => `import { GlassMenu, GlassContextMenu } from '@crystalflux/menu-glass'
 
 const items = [
   { label: 'Open', onSelect: open },

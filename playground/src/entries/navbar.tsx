@@ -1,10 +1,10 @@
-import { Navbar } from '@crystal-design/navbar'
+import { Navbar } from '@crystalflux/navbar'
 import { changed, styleAttr, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'navbar',
   name: 'Navbar',
-  pkg: '@crystal-design/navbar',
+  pkg: '@crystalflux/navbar',
   category: 'Navigation',
   description: 'Solid themed top bar pinned while the page scrolls.',
   glass: false,
@@ -22,7 +22,7 @@ export const entry: Entry = {
     </Navbar>
   ),
   code(v) {
-    return `import { Navbar } from '@crystal-design/navbar'
+    return `import { Navbar } from '@crystalflux/navbar'
 
 <Navbar${styleAttr({ gap: changed(this, v, 'gap') && (v.gap as number) })} aria-label="Main">
   <a href="/"><strong>${v.brand}</strong></a>

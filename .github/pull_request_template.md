@@ -4,7 +4,7 @@
 
 ## Components touched
 
-<!-- e.g. @crystal-design/button, playground -->
+<!-- e.g. @crystalflux/button, playground -->
 
 ## How I checked it
 

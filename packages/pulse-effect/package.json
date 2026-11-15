@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/pulse-effect",
+  "name": "@crystalflux/pulse-effect",
   "version": "0.1.0",
   "description": "Breathing opacity, scale or glow pulse for any element in React",
   "license": "MIT",

@@ -1,11 +1,11 @@
-import { GlassCard } from '@crystal-design/card-glass'
-import { GlassSkeleton } from '@crystal-design/skeleton-glass'
+import { GlassCard } from '@crystalflux/card-glass'
+import { GlassSkeleton } from '@crystalflux/skeleton-glass'
 import { glassAttrs, glassControls, glassProps, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'skeleton-glass',
   name: 'Glass Skeleton',
-  pkg: '@crystal-design/skeleton-glass',
+  pkg: '@crystalflux/skeleton-glass',
   category: 'Feedback',
   description: 'Frosted placeholder blocks with a sweeping shimmer.',
   controls: glassControls(8, 40),
@@ -23,7 +23,7 @@ export const entry: Entry = {
       </GlassCard>
     )
   },
-  code: (v) => `import { GlassSkeleton } from '@crystal-design/skeleton-glass'
+  code: (v) => `import { GlassSkeleton } from '@crystalflux/skeleton-glass'
 
 <GlassSkeleton circle width={44}${glassAttrs(entry, v)} />
 <GlassSkeleton height={12}${glassAttrs(entry, v)} />

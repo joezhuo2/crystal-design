@@ -1,6 +1,6 @@
-import { GlassButton } from '@crystal-design/button-glass'
-import { GlassCard } from '@crystal-design/card-glass'
-import { ShimmerEffect } from '@crystal-design/shimmer-effect'
+import { GlassButton } from '@crystalflux/button-glass'
+import { GlassCard } from '@crystalflux/card-glass'
+import { ShimmerEffect } from '@crystalflux/shimmer-effect'
 import { changed, type Entry } from '../entry'
 
 const Star = () => (
@@ -12,7 +12,7 @@ const Star = () => (
 export const entry: Entry = {
   id: 'shimmer-effect',
   name: 'Shimmer Effect',
-  pkg: '@crystal-design/shimmer-effect',
+  pkg: '@crystalflux/shimmer-effect',
   category: 'Effects',
   description: 'A diagonal band of light that sweeps across any element, clipped to its corners.',
   glass: false,
@@ -44,7 +44,7 @@ export const entry: Entry = {
     </div>
   ),
   code(v) {
-    return `import { ShimmerEffect } from '@crystal-design/shimmer-effect'
+    return `import { ShimmerEffect } from '@crystalflux/shimmer-effect'
 
 <ShimmerEffect${changed(this, v, 'trigger') ? `\n  trigger="${v.trigger}"` : ''}${changed(this, v, 'color') ? `\n  color="${v.color}"` : ''}${changed(this, v, 'duration') ? `\n  duration={${v.duration}}` : ''}${changed(this, v, 'delay') ? `\n  delay={${v.delay}}` : ''}>
   <GlassButton>Go</GlassButton>

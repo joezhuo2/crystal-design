@@ -7,7 +7,7 @@ import {
   type ElementType,
   type ReactNode,
 } from 'react'
-import { useSpotlight } from '@crystal-design/spotlight'
+import { useSpotlight } from '@crystalflux/spotlight'
 import styles from './GlassSurface.module.css'
 import { encodeMap, encodeRim } from './maps'
 

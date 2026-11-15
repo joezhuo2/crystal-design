@@ -36,11 +36,11 @@ what to check.
 ### Adding a component
 
 Names follow one pattern: a component called Glass Tabs lives in
-`packages/tabs-glass`, is published as `@crystal-design/tabs-glass`, exports
+`packages/tabs-glass`, is published as `@crystalflux/tabs-glass`, exports
 `GlassTabs` from `src/GlassTabs.tsx`, and has the playground id `tabs-glass`.
 
 1. Create `packages/<name>-glass` with a `package.json`, `src/index.ts` and
-   the component, built on `GlassSurface` from `@crystal-design/surface-glass`.
+   the component, built on `GlassSurface` from `@crystalflux/surface-glass`.
    Components that are not glass use a plain name (`packages/checkbox`,
    `Checkbox`) and theme through the `--cd-*` variables.
 2. Re-export it from `packages/glass/src/index.ts`, add it to that package's

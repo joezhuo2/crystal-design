@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/fuse-effect",
+  "name": "@crystalflux/fuse-effect",
   "version": "0.1.0",
   "description": "Burning fuse timer effect that wraps any element for React",
   "license": "MIT",

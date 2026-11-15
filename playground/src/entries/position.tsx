@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { GlassButton } from '@crystal-design/button-glass'
-import { place, useDismiss } from '@crystal-design/position'
+import { GlassButton } from '@crystalflux/button-glass'
+import { place, useDismiss } from '@crystalflux/position'
 import { changed, type Entry, type Values } from '../entry'
 
 type Side = 'top' | 'bottom' | 'left' | 'right'
@@ -51,7 +51,7 @@ function PositionDemo({ side, align }: { side: Side; align: Align }) {
 export const entry: Entry = {
   id: 'position',
   name: 'Position',
-  pkg: '@crystal-design/position',
+  pkg: '@crystalflux/position',
   category: 'Overlays',
   description: 'Popup placement that flips and clamps, plus a layered dismiss hook.',
   glass: false,
@@ -60,7 +60,7 @@ export const entry: Entry = {
     { key: 'align', label: 'Align', type: 'select', options: ['start', 'center', 'end'], value: 'start' },
   ],
   render: (v: Values) => <PositionDemo side={v.side as Side} align={v.align as Align} />,
-  code: (v) => `import { place, useDismiss } from '@crystal-design/position'
+  code: (v) => `import { place, useDismiss } from '@crystalflux/position'
 
 const { x, y, side } = place(trigger.getBoundingClientRect(), { width, height }, { ${[
     changed(entry, v, 'side') && `side: '${v.side}'`,

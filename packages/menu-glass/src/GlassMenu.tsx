@@ -1,5 +1,5 @@
 import { useRef, useState, type ReactNode } from 'react'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import { MenuPanel, type GlassMenuItem } from './MenuPanel'
 import styles from './GlassMenu.module.css'
 

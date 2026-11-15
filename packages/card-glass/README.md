@@ -1,9 +1,9 @@
-# @crystal-design/card-glass
+# @crystalflux/card-glass
 
 Liquid glass card for React.
 
 ```bash
-npm install @crystal-design/card-glass
+npm install @crystalflux/card-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/card-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

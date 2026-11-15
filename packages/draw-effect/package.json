@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/draw-effect",
+  "name": "@crystalflux/draw-effect",
   "version": "0.1.0",
   "description": "Stroke draw-in and wipe effect for any SVG in React",
   "license": "MIT",

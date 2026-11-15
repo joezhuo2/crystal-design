@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { GlassButton } from '@crystal-design/button-glass'
-import { GlassCard } from '@crystal-design/card-glass'
-import { GlassSurface } from '@crystal-design/surface-glass'
-import { GlassIcon } from '@crystal-design/icon-glass'
-import { GlassNavbar } from '@crystal-design/navbar-glass'
+import { GlassButton } from '@crystalflux/button-glass'
+import { GlassCard } from '@crystalflux/card-glass'
+import { GlassSurface } from '@crystalflux/surface-glass'
+import { GlassIcon } from '@crystalflux/icon-glass'
+import { GlassNavbar } from '@crystalflux/navbar-glass'
 import {
   changed,
   glassAttrs,
@@ -16,7 +16,7 @@ import {
   type Entry,
   type Values,
 } from './entry'
-import { GlassSidebar, GlassSidebarItem, type GlassSidebarProps } from '@crystal-design/sidebar-glass'
+import { GlassSidebar, GlassSidebarItem, type GlassSidebarProps } from '@crystalflux/sidebar-glass'
 import { entry as tabsGlass } from './entries/tabs-glass'
 import { entry as selectGlass } from './entries/select-glass'
 import { entry as tooltipGlass } from './entries/tooltip-glass'
@@ -92,7 +92,7 @@ function SidebarDemo(props: GlassSidebarProps) {
 const surface: Entry = {
   id: 'surface-glass',
   name: 'Glass Surface',
-  pkg: '@crystal-design/surface-glass',
+  pkg: '@crystalflux/surface-glass',
   category: 'Surfaces',
   description: 'Core panel that bends what is behind it.',
   controls: [
@@ -101,7 +101,7 @@ const surface: Entry = {
     { key: 'height', label: 'Height', type: 'range', min: 60, max: 300, value: 120 },
   ],
   render: (v) => <GlassSurface {...glassProps(v)} style={{ width: v.width as number, height: v.height as number }} />,
-  code: (v) => `import { GlassSurface } from '@crystal-design/surface-glass'
+  code: (v) => `import { GlassSurface } from '@crystalflux/surface-glass'
 
 <GlassSurface${glassAttrs(surface, v)}${styleAttr({ width: v.width as number, height: v.height as number })} />`,
 }
@@ -109,7 +109,7 @@ const surface: Entry = {
 const button: Entry = {
   id: 'button-glass',
   name: 'Glass Button',
-  pkg: '@crystal-design/button-glass',
+  pkg: '@crystalflux/button-glass',
   category: 'Actions',
   description: 'Glass button with hover and press states.',
   controls: [
@@ -123,7 +123,7 @@ const button: Entry = {
       {v.label}
     </GlassButton>
   ),
-  code: (v) => `import { GlassButton } from '@crystal-design/button-glass'
+  code: (v) => `import { GlassButton } from '@crystalflux/button-glass'
 
 <GlassButton${glassAttrs(button, v)}${styleAttr({ paddingInline: changed(button, v, 'padding') && (v.padding as number) })}${v.disabled ? ' disabled' : ''}>${v.label}</GlassButton>`,
 }
@@ -131,7 +131,7 @@ const button: Entry = {
 const card: Entry = {
   id: 'card-glass',
   name: 'Glass Card',
-  pkg: '@crystal-design/card-glass',
+  pkg: '@crystalflux/card-glass',
   category: 'Surfaces',
   description: 'Padded panel for text, media or actions.',
   controls: [
@@ -147,7 +147,7 @@ const card: Entry = {
       <p>{v.body}</p>
     </GlassCard>
   ),
-  code: (v) => `import { GlassCard } from '@crystal-design/card-glass'
+  code: (v) => `import { GlassCard } from '@crystalflux/card-glass'
 
 <GlassCard${glassAttrs(card, v)}${styleAttr({ maxWidth: v.width as number, padding: changed(card, v, 'padding') && (v.padding as number) })}>
   <h3>${v.title}</h3>
@@ -158,7 +158,7 @@ const card: Entry = {
 const navbar: Entry = {
   id: 'navbar-glass',
   name: 'Glass Navbar',
-  pkg: '@crystal-design/navbar-glass',
+  pkg: '@crystalflux/navbar-glass',
   category: 'Navigation',
   description: 'Top bar pinned while the page scrolls.',
   controls: [
@@ -175,7 +175,7 @@ const navbar: Entry = {
       <a href="#/navbar-glass">Pricing</a>
     </GlassNavbar>
   ),
-  code: (v) => `import { GlassNavbar } from '@crystal-design/navbar-glass'
+  code: (v) => `import { GlassNavbar } from '@crystalflux/navbar-glass'
 
 <GlassNavbar${glassAttrs(navbar, v)}${styleAttr({ gap: changed(navbar, v, 'gap') && (v.gap as number) })} aria-label="Main">
   <a href="/"><strong>${v.brand}</strong></a>
@@ -187,13 +187,13 @@ const navbar: Entry = {
 const sidebar: Entry = {
   id: 'sidebar-glass',
   name: 'Glass Sidebar',
-  pkg: '@crystal-design/sidebar-glass',
+  pkg: '@crystalflux/sidebar-glass',
   category: 'Navigation',
   description: 'Icon rail that expands on hover.',
   controls: [...glassControls(12, 32), { key: 'padding', label: 'Padding', type: 'range', min: 4, max: 16, value: 10 }],
   render: (v) => <SidebarDemo {...glassProps(v)} style={{ padding: v.padding as number }} />,
   code: (v) => `import { useState } from 'react'
-import { GlassSidebar, GlassSidebarItem } from '@crystal-design/sidebar-glass'
+import { GlassSidebar, GlassSidebarItem } from '@crystalflux/sidebar-glass'
 
 const [active, setActive] = useState('Home')
 
@@ -207,7 +207,7 @@ const [active, setActive] = useState('Home')
 const icon: Entry = {
   id: 'icon-glass',
   name: 'Glass Icon',
-  pkg: '@crystal-design/icon-glass',
+  pkg: '@crystalflux/icon-glass',
   category: 'Surfaces',
   description: 'Glass tile around a glyph or logo.',
   controls: [
@@ -221,7 +221,7 @@ const icon: Entry = {
       <Glyph d={glyphs.star} />
     </GlassIcon>
   ),
-  code: (v) => `import { GlassIcon } from '@crystal-design/icon-glass'
+  code: (v) => `import { GlassIcon } from '@crystalflux/icon-glass'
 
 <GlassIcon size={${v.size}}${glassAttrs(icon, v)} label="Favorite">
   <StarIcon />

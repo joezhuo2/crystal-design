@@ -1,9 +1,9 @@
-# @crystal-design/navbar-glass
+# @crystalflux/navbar-glass
 
 Floating liquid glass navbar for React.
 
 ```bash
-npm install @crystal-design/navbar-glass
+npm install @crystalflux/navbar-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/navbar-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

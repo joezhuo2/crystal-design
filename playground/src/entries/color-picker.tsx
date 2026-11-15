@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ColorPicker } from '@crystal-design/color-picker'
+import { ColorPicker } from '@crystalflux/color-picker'
 import type { Entry } from '../entry'
 
 function Demo({ label, initial }: { label: string; initial: string }) {
@@ -15,7 +15,7 @@ function Demo({ label, initial }: { label: string; initial: string }) {
 export const entry: Entry = {
   id: 'color-picker',
   name: 'Color Picker',
-  pkg: '@crystal-design/color-picker',
+  pkg: '@crystalflux/color-picker',
   category: 'Inputs',
   description: 'Swatch button opening an HSV picker with hue slider, presets and hex input.',
   glass: false,
@@ -24,7 +24,7 @@ export const entry: Entry = {
     { key: 'initial', label: 'Initial color', type: 'color', value: '#a8e0ff' },
   ],
   render: (v) => <Demo key={v.initial as string} label={v.label as string} initial={v.initial as string} />,
-  code: (v) => `import { ColorPicker } from '@crystal-design/color-picker'
+  code: (v) => `import { ColorPicker } from '@crystalflux/color-picker'
 
 const [color, setColor] = useState('${v.initial}')
 

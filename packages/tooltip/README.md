@@ -1,9 +1,9 @@
-# @crystal-design/tooltip
+# @crystalflux/tooltip
 
 Themed CSS tooltip for React.
 
 ```bash
-npm install @crystal-design/tooltip
+npm install @crystalflux/tooltip
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/tooltip) · [All components](https://github.com/joezhuo2/crystal-design#readme)

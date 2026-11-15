@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/smooth-range",
+  "name": "@crystalflux/smooth-range",
   "version": "0.1.0",
   "description": "Range input that eases toward the clicked value for React",
   "license": "MIT",

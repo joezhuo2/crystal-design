@@ -9,8 +9,8 @@ import {
   type RefObject,
 } from 'react'
 import { createPortal } from 'react-dom'
-import { GlassSurface } from '@crystal-design/surface-glass'
-import { place, useDismiss, type Side } from '@crystal-design/position'
+import { GlassSurface } from '@crystalflux/surface-glass'
+import { place, useDismiss, type Side } from '@crystalflux/position'
 import styles from './GlassMenu.module.css'
 
 export type GlassMenuItem = {

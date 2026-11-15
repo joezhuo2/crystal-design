@@ -1,9 +1,9 @@
-# @crystal-design/spotlight
+# @crystalflux/spotlight
 
 Cursor-following light hook for React.
 
 ```bash
-npm install @crystal-design/spotlight
+npm install @crystalflux/spotlight
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/spotlight) · [All components](https://github.com/joezhuo2/crystal-design#readme)

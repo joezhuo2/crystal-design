@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/text-scramble",
+  "name": "@crystalflux/text-scramble",
   "version": "0.1.0",
   "description": "Text that decodes into place through look-alike glyphs, for React",
   "license": "MIT",

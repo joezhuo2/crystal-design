@@ -7,7 +7,7 @@ import {
   type ReactNode,
 } from 'react'
 import styles from './TimedButton.module.css'
-import { FuseEffect } from '@crystal-design/fuse-effect'
+import { FuseEffect } from '@crystalflux/fuse-effect'
 import { nextPhase, type Phase, type Settle } from './timer'
 
 export type TimedButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> & {

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GlassCheckbox } from '@crystal-design/checkbox-glass'
+import { GlassCheckbox } from '@crystalflux/checkbox-glass'
 import type { Entry, Values } from '../entry'
 
 function Demo({ v }: { v: Values }) {
@@ -12,7 +12,7 @@ function Demo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'checkbox-glass',
   name: 'Glass Checkbox',
-  pkg: '@crystal-design/checkbox-glass',
+  pkg: '@crystalflux/checkbox-glass',
   category: 'Inputs',
   description: 'Glass checkbox that draws its check.',
   controls: [
@@ -22,7 +22,7 @@ export const entry: Entry = {
   render: (v) => <Demo v={v} />,
   code: (v) => {
     const attrs = `${v.disabled ? ' disabled' : ''}${v.label ? ` label="${v.label}"` : ''}`
-    return `import { GlassCheckbox } from '@crystal-design/checkbox-glass'
+    return `import { GlassCheckbox } from '@crystalflux/checkbox-glass'
 
 <GlassCheckbox checked={checked} onChange={setChecked}${attrs} />`
   },

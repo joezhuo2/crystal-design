@@ -1,9 +1,9 @@
-# @crystal-design/progress-ring-glass
+# @crystalflux/progress-ring-glass
 
 Liquid glass progress ring for React.
 
 ```bash
-npm install @crystal-design/progress-ring-glass
+npm install @crystalflux/progress-ring-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/progress-ring-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

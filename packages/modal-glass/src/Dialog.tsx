@@ -1,5 +1,5 @@
 import { useId, type ReactNode } from 'react'
-import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/surface-glass'
+import { GlassSurface, type GlassSurfaceProps } from '@crystalflux/surface-glass'
 import styles from './Dialog.module.css'
 import { useDialog } from './useDialog'
 

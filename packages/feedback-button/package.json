@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/feedback-button",
+  "name": "@crystalflux/feedback-button",
   "version": "0.1.0",
   "description": "Button that shows busy, done and error status for React",
   "license": "MIT",

@@ -1,10 +1,10 @@
-import { Stardust } from '@crystal-design/stardust'
+import { Stardust } from '@crystalflux/stardust'
 import { changed, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'stardust',
   name: 'Stardust',
-  pkg: '@crystal-design/stardust',
+  pkg: '@crystalflux/stardust',
   category: 'Effects',
   hover: true,
   description: 'Twinkling particle trail that follows the cursor inside a container or the whole window.',
@@ -39,7 +39,7 @@ export const entry: Entry = {
       .filter((key) => changed(entry, v, key))
       .map((key) => ` ${key}=${typeof v[key] === 'number' ? `{${v[key]}}` : `"${v[key]}"`}`)
       .join('')
-    return `import { Stardust } from '@crystal-design/stardust'
+    return `import { Stardust } from '@crystalflux/stardust'
 
 <Stardust${attrs}>
   Move your cursor here

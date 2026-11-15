@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GlassTabs } from '@crystal-design/tabs-glass'
+import { GlassTabs } from '@crystalflux/tabs-glass'
 import { glassAttrs, glassControls, glassProps, type Entry, type Values } from '../entry'
 
 function Demo({ v }: { v: Values }) {
@@ -12,13 +12,13 @@ function Demo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'tabs-glass',
   name: 'Glass Tabs',
-  pkg: '@crystal-design/tabs-glass',
+  pkg: '@crystalflux/tabs-glass',
   category: 'Navigation',
   description: 'Segmented tabs with a stretchy thumb that leads with its edge.',
   controls: [...glassControls(14, 30), { key: 'count', label: 'Tabs', type: 'range', min: 2, max: 3, value: 3 }],
   render: (v) => <Demo v={v} />,
   code: (v) => `import { useState } from 'react'
-import { GlassTabs } from '@crystal-design/tabs-glass'
+import { GlassTabs } from '@crystalflux/tabs-glass'
 
 const [tab, setTab] = useState('Home')
 

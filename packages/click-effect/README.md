@@ -1,9 +1,9 @@
-# @crystal-design/click-effect
+# @crystalflux/click-effect
 
 Press scale and click animations for any React element.
 
 ```bash
-npm install @crystal-design/click-effect
+npm install @crystalflux/click-effect
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/click-effect) · [All components](https://github.com/joezhuo2/crystal-design#readme)

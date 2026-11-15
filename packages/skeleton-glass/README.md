@@ -1,9 +1,9 @@
-# @crystal-design/skeleton-glass
+# @crystalflux/skeleton-glass
 
 Liquid glass skeleton loader for React.
 
 ```bash
-npm install @crystal-design/skeleton-glass
+npm install @crystalflux/skeleton-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/skeleton-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/smooth-scroll",
+  "name": "@crystalflux/smooth-scroll",
   "version": "0.1.0",
   "description": "Smooth inertial wheel scrolling for React",
   "license": "MIT",

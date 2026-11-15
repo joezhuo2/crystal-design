@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { FadeInEffect, type FadeInEffectProps } from '@crystal-design/fade-in-effect'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { FadeInEffect, type FadeInEffectProps } from '@crystalflux/fade-in-effect'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import { changed, type Entry } from '../entry'
 
 type Props = { from: FadeInEffectProps['from']; split: FadeInEffectProps['split']; stagger: number; duration: number }
@@ -33,7 +33,7 @@ function Demo({ from, split, stagger, duration }: Props) {
 export const entry: Entry = {
   id: 'fade-in-effect',
   name: 'Fade In Effect',
-  pkg: '@crystal-design/fade-in-effect',
+  pkg: '@crystalflux/fade-in-effect',
   category: 'Effects',
   description: 'Fades any element or text in from the bottom, top, a side or in place, optionally word by word.',
   glass: false,
@@ -58,7 +58,7 @@ export const entry: Entry = {
       v.split !== 'none' && changed(this, v, 'stagger') ? ` stagger={${v.stagger}}` : '',
       changed(this, v, 'duration') ? ` duration={${v.duration}}` : '',
     ].join('')
-    return `import { FadeInEffect } from '@crystal-design/fade-in-effect'
+    return `import { FadeInEffect } from '@crystalflux/fade-in-effect'
 
 <FadeInEffect${props}>
   Text that fades in

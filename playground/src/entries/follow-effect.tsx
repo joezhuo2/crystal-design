@@ -1,6 +1,6 @@
 import { useState, type CSSProperties } from 'react'
-import { FollowEffect } from '@crystal-design/follow-effect'
-import { GlassNavbar } from '@crystal-design/navbar-glass'
+import { FollowEffect } from '@crystalflux/follow-effect'
+import { GlassNavbar } from '@crystalflux/navbar-glass'
 import { Glyph, glyphs, type Entry, type Values } from '../entry'
 
 const labels = ['Home', 'Components', 'Favorites']
@@ -123,7 +123,7 @@ const indexName: Record<string, string> = { Tabs: 'tab', Navbar: 'page', Sidebar
 export const entry: Entry = {
   id: 'follow-effect',
   name: 'Follow Effect',
-  pkg: '@crystal-design/follow-effect',
+  pkg: '@crystalflux/follow-effect',
   category: 'Effects',
   description: 'A highlight pill that glides to whichever row, link or tab is under the pointer or focus.',
   glass: false,
@@ -136,8 +136,8 @@ export const entry: Entry = {
   code: (v) => {
     const layout = v.layout as string
     const attrs = v.rest === 'active' ? ` rest="active" active={${indexName[layout]}}` : ''
-    return `import { FollowEffect } from '@crystal-design/follow-effect'${
-      layout === 'Navbar' ? `\nimport { GlassNavbar } from '@crystal-design/navbar-glass'` : ''
+    return `import { FollowEffect } from '@crystalflux/follow-effect'${
+      layout === 'Navbar' ? `\nimport { GlassNavbar } from '@crystalflux/navbar-glass'` : ''
     }
 
 ${snippets[layout](attrs)}`

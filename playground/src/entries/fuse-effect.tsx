@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { FuseEffect } from '@crystal-design/fuse-effect'
-import { GlassCard } from '@crystal-design/card-glass'
+import { FuseEffect } from '@crystalflux/fuse-effect'
+import { GlassCard } from '@crystalflux/card-glass'
 import { changed, type Entry, type Values } from '../entry'
 
 function Demo({ v }: { v: Values }) {
@@ -40,7 +40,7 @@ function Demo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'fuse-effect',
   name: 'Fuse Effect',
-  pkg: '@crystal-design/fuse-effect',
+  pkg: '@crystalflux/fuse-effect',
   category: 'Effects',
   description: 'Wrap any element to burn a fuse along its border or a bottom bar over a set duration.',
   glass: false,
@@ -56,7 +56,7 @@ export const entry: Entry = {
     ]
       .filter(Boolean)
       .join('')
-    return `import { FuseEffect } from '@crystal-design/fuse-effect'
+    return `import { FuseEffect } from '@crystalflux/fuse-effect'
 
 <FuseEffect
   active={armed}${attrs}

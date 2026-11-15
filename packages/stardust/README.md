@@ -1,9 +1,9 @@
-# @crystal-design/stardust
+# @crystalflux/stardust
 
 Stardust trail that follows the cursor for React.
 
 ```bash
-npm install @crystal-design/stardust
+npm install @crystalflux/stardust
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/stardust) · [All components](https://github.com/joezhuo2/crystal-design#readme)

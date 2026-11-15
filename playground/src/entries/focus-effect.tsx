@@ -1,6 +1,6 @@
 import { useState, type KeyboardEvent } from 'react'
-import { GlassButton } from '@crystal-design/button-glass'
-import { FocusEffect } from '@crystal-design/focus-effect'
+import { GlassButton } from '@crystalflux/button-glass'
+import { FocusEffect } from '@crystalflux/focus-effect'
 import { changed, glassAttrs, glassControls, glassProps, type Entry, type Values } from '../entry'
 
 const CHIPS = ['Docs', 'Components', 'Themes', 'Blog']
@@ -55,7 +55,7 @@ function Demo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'focus-effect',
   name: 'Focus Effect',
-  pkg: '@crystal-design/focus-effect',
+  pkg: '@crystalflux/focus-effect',
   category: 'Effects',
   description: 'Jelly springs that swell the active item of any group and nudge its neighbours aside.',
   glass: true,
@@ -74,8 +74,8 @@ export const entry: Entry = {
       .map((key) => ` ${key}={${m[key]}}`)
       .join('')
     return `import { useState } from 'react'
-import { GlassButton } from '@crystal-design/button-glass'
-import { FocusEffect } from '@crystal-design/focus-effect'
+import { GlassButton } from '@crystalflux/button-glass'
+import { FocusEffect } from '@crystalflux/focus-effect'
 
 const [power, setPower] = useState(0)
 

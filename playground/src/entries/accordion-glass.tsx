@@ -1,10 +1,10 @@
-import { GlassAccordion, GlassAccordionItem } from '@crystal-design/accordion-glass'
+import { GlassAccordion, GlassAccordionItem } from '@crystalflux/accordion-glass'
 import { glassAttrs, glassControls, glassProps, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'accordion-glass',
   name: 'Glass Accordion',
-  pkg: '@crystal-design/accordion-glass',
+  pkg: '@crystalflux/accordion-glass',
   category: 'Surfaces',
   description: 'Collapsible sections in one glass container.',
   controls: [...glassControls(18, 30), { key: 'multiple', label: 'Allow multiple', type: 'toggle', value: false }],
@@ -15,7 +15,7 @@ export const entry: Entry = {
       <GlassAccordionItem title="Can several be open?">Turn on the multiple prop.</GlassAccordionItem>
     </GlassAccordion>
   ),
-  code: (v) => `import { GlassAccordion, GlassAccordionItem } from '@crystal-design/accordion-glass'
+  code: (v) => `import { GlassAccordion, GlassAccordionItem } from '@crystalflux/accordion-glass'
 
 <GlassAccordion${v.multiple ? ' multiple' : ''}${glassAttrs(entry, v)}>
   <GlassAccordionItem title="What is it?">A frosted container.</GlassAccordionItem>

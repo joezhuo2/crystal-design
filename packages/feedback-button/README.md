@@ -1,9 +1,9 @@
-# @crystal-design/feedback-button
+# @crystalflux/feedback-button
 
 Button that shows busy, done and error status for React.
 
 ```bash
-npm install @crystal-design/feedback-button
+npm install @crystalflux/feedback-button
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/feedback-button) · [All components](https://github.com/joezhuo2/crystal-design#readme)

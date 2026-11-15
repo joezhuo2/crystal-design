@@ -1,4 +1,4 @@
-import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/surface-glass'
+import { GlassSurface, type GlassSurfaceProps } from '@crystalflux/surface-glass'
 import styles from './GlassNavbar.module.css'
 
 export type GlassNavbarProps = Omit<GlassSurfaceProps<'nav'>, 'as'>

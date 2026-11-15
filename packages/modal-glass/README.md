@@ -1,9 +1,9 @@
-# @crystal-design/modal-glass
+# @crystalflux/modal-glass
 
 Liquid glass modal and drawer for React.
 
 ```bash
-npm install @crystal-design/modal-glass
+npm install @crystalflux/modal-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/modal-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

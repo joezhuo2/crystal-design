@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { TimedButton } from '@crystal-design/timed-button'
+import { TimedButton } from '@crystalflux/timed-button'
 import { changed, type Entry, type Values } from '../entry'
 
 function Demo({ v }: { v: Values }) {
@@ -28,7 +28,7 @@ function Demo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'timed-button',
   name: 'Timed Button',
-  pkg: '@crystal-design/timed-button',
+  pkg: '@crystalflux/timed-button',
   category: 'Actions',
   description: 'An action button that arms an undo window with a burning fuse around its rim.',
   glass: false,
@@ -52,7 +52,7 @@ export const entry: Entry = {
     ]
       .filter(Boolean)
       .join('')
-    return `import { TimedButton } from '@crystal-design/timed-button'
+    return `import { TimedButton } from '@crystalflux/timed-button'
 
 <TimedButton
   label="Archive"

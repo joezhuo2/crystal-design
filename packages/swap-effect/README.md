@@ -1,9 +1,9 @@
-# @crystal-design/swap-effect
+# @crystalflux/swap-effect
 
 Blur, fade and slide content swap with animated width for React.
 
 ```bash
-npm install @crystal-design/swap-effect
+npm install @crystalflux/swap-effect
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/swap-effect) · [All components](https://github.com/joezhuo2/crystal-design#readme)

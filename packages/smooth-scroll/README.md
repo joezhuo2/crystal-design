@@ -1,9 +1,9 @@
-# @crystal-design/smooth-scroll
+# @crystalflux/smooth-scroll
 
 Smooth inertial wheel scrolling for React.
 
 ```bash
-npm install @crystal-design/smooth-scroll
+npm install @crystalflux/smooth-scroll
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/smooth-scroll) · [All components](https://github.com/joezhuo2/crystal-design#readme)

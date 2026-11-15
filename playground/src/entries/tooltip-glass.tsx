@@ -1,11 +1,11 @@
-import { GlassButton } from '@crystal-design/button-glass'
-import { GlassTooltip } from '@crystal-design/tooltip-glass'
+import { GlassButton } from '@crystalflux/button-glass'
+import { GlassTooltip } from '@crystalflux/tooltip-glass'
 import { changed, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'tooltip-glass',
   name: 'Glass Tooltip',
-  pkg: '@crystal-design/tooltip-glass',
+  pkg: '@crystalflux/tooltip-glass',
   category: 'Overlays',
   hover: true,
   description: 'Glass tooltip with a warm window so neighbours show instantly.',
@@ -24,7 +24,7 @@ export const entry: Entry = {
       </GlassTooltip>
     </div>
   ),
-  code: (v) => `import { GlassTooltip } from '@crystal-design/tooltip-glass'
+  code: (v) => `import { GlassTooltip } from '@crystalflux/tooltip-glass'
 
 <GlassTooltip content="${v.content}"${changed(entry, v, 'side') ? ` side="${v.side}"` : ''}${changed(entry, v, 'delay') ? ` delay={${v.delay}}` : ''}>
   <button>Hover me</button>

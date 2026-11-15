@@ -1,5 +1,5 @@
-import { PulseEffect } from '@crystal-design/pulse-effect'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { PulseEffect } from '@crystalflux/pulse-effect'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import type { Entry } from '../entry'
 
 type Mode = 'opacity' | 'scale' | 'glow'
@@ -7,7 +7,7 @@ type Mode = 'opacity' | 'scale' | 'glow'
 export const entry: Entry = {
   id: 'pulse-effect',
   name: 'Pulse Effect',
-  pkg: '@crystal-design/pulse-effect',
+  pkg: '@crystalflux/pulse-effect',
   category: 'Effects',
   description: 'A breathing opacity, scale or glow pulse for any element.',
   glass: false,
@@ -29,7 +29,7 @@ export const entry: Entry = {
       </PulseEffect>
     </div>
   ),
-  code: (v) => `import { PulseEffect } from '@crystal-design/pulse-effect'
+  code: (v) => `import { PulseEffect } from '@crystalflux/pulse-effect'
 
 <PulseEffect active={busy} mode="${v.mode}" duration={${v.duration}} min={${(v.min as number) / 100}}>
   <button>Syncing</button>

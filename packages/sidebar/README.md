@@ -1,9 +1,9 @@
-# @crystal-design/sidebar
+# @crystalflux/sidebar
 
 Themed icon rail sidebar that expands on hover for React.
 
 ```bash
-npm install @crystal-design/sidebar
+npm install @crystalflux/sidebar
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/sidebar) · [All components](https://github.com/joezhuo2/crystal-design#readme)

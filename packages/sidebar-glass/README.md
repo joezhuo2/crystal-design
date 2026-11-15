@@ -1,9 +1,9 @@
-# @crystal-design/sidebar-glass
+# @crystalflux/sidebar-glass
 
 Collapsing liquid glass sidebar for React.
 
 ```bash
-npm install @crystal-design/sidebar-glass
+npm install @crystalflux/sidebar-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/sidebar-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

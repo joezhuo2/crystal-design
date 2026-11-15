@@ -1,9 +1,9 @@
-# @crystal-design/color-picker
+# @crystalflux/color-picker
 
 Themed HSV color picker for React.
 
 ```bash
-npm install @crystal-design/color-picker
+npm install @crystalflux/color-picker
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/color-picker) · [All components](https://github.com/joezhuo2/crystal-design#readme)

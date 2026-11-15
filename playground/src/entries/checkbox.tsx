@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Checkbox } from '@crystal-design/checkbox'
+import { Checkbox } from '@crystalflux/checkbox'
 import type { Entry } from '../entry'
 
 function Demo({ checked, disabled, label }: { checked: boolean; disabled: boolean; label: string }) {
@@ -17,7 +17,7 @@ function Demo({ checked, disabled, label }: { checked: boolean; disabled: boolea
 export const entry: Entry = {
   id: 'checkbox',
   name: 'Checkbox',
-  pkg: '@crystal-design/checkbox',
+  pkg: '@crystalflux/checkbox',
   category: 'Inputs',
   description: 'Native checkbox with a spring fill, drawn check mark and squish.',
   glass: false,
@@ -29,7 +29,7 @@ export const entry: Entry = {
   render: (v) => <Demo checked={v.checked as boolean} disabled={v.disabled as boolean} label={v.label as string} />,
   code(v) {
     const attrs = `${v.checked ? ' defaultChecked' : ''}${v.disabled ? ' disabled' : ''}${v.label ? ` label="${v.label}"` : ''}`
-    return `import { Checkbox } from '@crystal-design/checkbox'
+    return `import { Checkbox } from '@crystalflux/checkbox'
 
 <Checkbox${attrs} />`
   },

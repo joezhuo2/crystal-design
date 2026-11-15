@@ -1,10 +1,10 @@
-import { Tooltip } from '@crystal-design/tooltip'
+import { Tooltip } from '@crystalflux/tooltip'
 import { changed, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'tooltip',
   name: 'Tooltip',
-  pkg: '@crystal-design/tooltip',
+  pkg: '@crystalflux/tooltip',
   category: 'Overlays',
   hover: true,
   description: 'CSS-only themed tooltip that shows on hover and focus.',
@@ -24,7 +24,7 @@ export const entry: Entry = {
   code(v) {
     const side = changed(this, v, 'side') ? ` side="${v.side}"` : ''
     const align = changed(this, v, 'align') ? ` align="${v.align}"` : ''
-    return `import { Tooltip } from '@crystal-design/tooltip'
+    return `import { Tooltip } from '@crystalflux/tooltip'
 
 <Tooltip content="${v.content}"${side}${align}>
   <button>Hover me</button>

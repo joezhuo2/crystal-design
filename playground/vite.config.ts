@@ -5,7 +5,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: /^@crystal-design\/([^/]+)$/,
+        find: /^@crystalflux\/([^/]+)$/,
         replacement: resolve(import.meta.dirname, '../packages/$1/src/index.ts'),
       },
     ],

@@ -1,7 +1,7 @@
 import { useId, useLayoutEffect, useRef, useState, type KeyboardEvent } from 'react'
 import { createPortal } from 'react-dom'
-import { GlassSurface } from '@crystal-design/surface-glass'
-import { place, useDismiss } from '@crystal-design/position'
+import { GlassSurface } from '@crystalflux/surface-glass'
+import { place, useDismiss } from '@crystalflux/position'
 import styles from './GlassSelect.module.css'
 
 export type GlassSelectOption = string | { value: string; label: string }

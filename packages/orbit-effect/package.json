@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/orbit-effect",
+  "name": "@crystalflux/orbit-effect",
   "version": "0.1.0",
   "description": "Orbiting border highlight for any React element",
   "license": "MIT",

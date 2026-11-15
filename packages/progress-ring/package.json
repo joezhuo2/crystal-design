@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/progress-ring",
+  "name": "@crystalflux/progress-ring",
   "version": "0.1.0",
   "description": "Circular progress ring with level colours for React",
   "license": "MIT",

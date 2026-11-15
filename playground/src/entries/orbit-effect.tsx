@@ -1,6 +1,6 @@
-import { GlassButton } from '@crystal-design/button-glass'
-import { GlassCard } from '@crystal-design/card-glass'
-import { OrbitEffect } from '@crystal-design/orbit-effect'
+import { GlassButton } from '@crystalflux/button-glass'
+import { GlassCard } from '@crystalflux/card-glass'
+import { OrbitEffect } from '@crystalflux/orbit-effect'
 import { changed, type Entry } from '../entry'
 
 const Star = () => (
@@ -12,7 +12,7 @@ const Star = () => (
 export const entry: Entry = {
   id: 'orbit-effect',
   name: 'Orbit Effect',
-  pkg: '@crystal-design/orbit-effect',
+  pkg: '@crystalflux/orbit-effect',
   category: 'Effects',
   description: 'A bright highlight that orbits around the border of any element.',
   glass: false,
@@ -44,7 +44,7 @@ export const entry: Entry = {
     </div>
   ),
   code(v) {
-    return `import { OrbitEffect } from '@crystal-design/orbit-effect'
+    return `import { OrbitEffect } from '@crystalflux/orbit-effect'
 
 <OrbitEffect${changed(this, v, 'trigger') ? `\n  trigger="${v.trigger}"` : ''}${changed(this, v, 'color') ? `\n  color="${v.color}"` : ''}${changed(this, v, 'speed') ? `\n  speed={${v.speed}}` : ''}${changed(this, v, 'thickness') ? `\n  thickness={${v.thickness}}` : ''}>
   <GlassButton>Go</GlassButton>

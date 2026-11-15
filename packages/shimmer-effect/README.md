@@ -1,9 +1,9 @@
-# @crystal-design/shimmer-effect
+# @crystalflux/shimmer-effect
 
 Sweeping light band for any React element.
 
 ```bash
-npm install @crystal-design/shimmer-effect
+npm install @crystalflux/shimmer-effect
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/shimmer-effect) · [All components](https://github.com/joezhuo2/crystal-design#readme)

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GlassSwitch } from '@crystal-design/switch-glass'
+import { GlassSwitch } from '@crystalflux/switch-glass'
 import type { Entry, Values } from '../entry'
 
 function Demo({ v }: { v: Values }) {
@@ -12,7 +12,7 @@ function Demo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'switch-glass',
   name: 'Glass Switch',
-  pkg: '@crystal-design/switch-glass',
+  pkg: '@crystalflux/switch-glass',
   category: 'Inputs',
   description: 'Glass switch with a spring knob.',
   controls: [
@@ -22,7 +22,7 @@ export const entry: Entry = {
   render: (v) => <Demo v={v} />,
   code: (v) => {
     const attrs = `${v.disabled ? ' disabled' : ''}${v.label ? ` label="${v.label}"` : ''}`
-    return `import { GlassSwitch } from '@crystal-design/switch-glass'
+    return `import { GlassSwitch } from '@crystalflux/switch-glass'
 
 <GlassSwitch checked={on} onChange={setOn}${attrs} />`
   },

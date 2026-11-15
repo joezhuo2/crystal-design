@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/ripple-hover-effect",
+  "name": "@crystalflux/ripple-hover-effect",
   "version": "0.1.0",
   "description": "Text whose characters ripple under the pointer for React",
   "license": "MIT",

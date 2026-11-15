@@ -1,9 +1,9 @@
-# @crystal-design/glitch-text
+# @crystalflux/glitch-text
 
 Text that glitches in and out with RGB split and displacement, for React.
 
 ```bash
-npm install @crystal-design/glitch-text
+npm install @crystalflux/glitch-text
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/glitch-text) · [All components](https://github.com/joezhuo2/crystal-design#readme)

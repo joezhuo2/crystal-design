@@ -1,9 +1,9 @@
-# @crystal-design/button-glass
+# @crystalflux/button-glass
 
 Liquid glass button for React.
 
 ```bash
-npm install @crystal-design/button-glass
+npm install @crystalflux/button-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/button-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

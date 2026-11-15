@@ -1,9 +1,9 @@
-# @crystal-design/tabs-glass
+# @crystalflux/tabs-glass
 
 Liquid glass tabs for React.
 
 ```bash
-npm install @crystal-design/tabs-glass
+npm install @crystalflux/tabs-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/tabs-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

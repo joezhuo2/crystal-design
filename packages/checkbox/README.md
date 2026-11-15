@@ -1,9 +1,9 @@
-# @crystal-design/checkbox
+# @crystalflux/checkbox
 
 Animated checkbox for React.
 
 ```bash
-npm install @crystal-design/checkbox
+npm install @crystalflux/checkbox
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/checkbox) · [All components](https://github.com/joezhuo2/crystal-design#readme)

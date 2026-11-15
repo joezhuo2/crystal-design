@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { GlassCard } from '@crystal-design/card-glass'
-import { MorphEffect, type MorphAnchor } from '@crystal-design/morph-effect'
+import { GlassCard } from '@crystalflux/card-glass'
+import { MorphEffect, type MorphAnchor } from '@crystalflux/morph-effect'
 import { changed, type Entry, type Values } from '../entry'
 
 const panelStyle = {
@@ -45,7 +45,7 @@ function Demo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'morph-effect',
   name: 'Morph Effect',
-  pkg: '@crystal-design/morph-effect',
+  pkg: '@crystalflux/morph-effect',
   category: 'Effects',
   description: 'Morphs any panel from a small pill into its full shape, clipping glass blur cleanly along the way.',
   glass: false,
@@ -76,7 +76,7 @@ export const entry: Entry = {
       .join('')
     const panel = v.panel === 'glass' ? 'GlassCard' : 'div className="panel"'
     const close = v.panel === 'glass' ? 'GlassCard' : 'div'
-    return `import { MorphEffect } from '@crystal-design/morph-effect'${v.panel === 'glass' ? "\nimport { GlassCard } from '@crystal-design/card-glass'" : ''}
+    return `import { MorphEffect } from '@crystalflux/morph-effect'${v.panel === 'glass' ? "\nimport { GlassCard } from '@crystalflux/card-glass'" : ''}
 ${hover ? '' : '\nconst [open, setOpen] = useState(false)\n'}
 <MorphEffect${attrs}
 >

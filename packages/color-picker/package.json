@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/color-picker",
+  "name": "@crystalflux/color-picker",
   "version": "0.1.0",
   "description": "Themed HSV color picker for React",
   "license": "MIT",

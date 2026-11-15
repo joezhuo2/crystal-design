@@ -1,5 +1,5 @@
 import { createContext, useContext, useId, useState, type ReactNode } from 'react'
-import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/surface-glass'
+import { GlassSurface, type GlassSurfaceProps } from '@crystalflux/surface-glass'
 import styles from './GlassAccordion.module.css'
 
 type Ctx = { isOpen: (id: string) => boolean; toggle: (id: string) => void }

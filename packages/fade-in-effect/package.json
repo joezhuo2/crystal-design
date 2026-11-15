@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/fade-in-effect",
+  "name": "@crystalflux/fade-in-effect",
   "version": "0.1.0",
   "description": "Fade in and out with optional travel and text splitting for React",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "build": "vite build --config ../../vite.lib.ts && tsc -p ."
   },
   "dependencies": {
-    "@crystal-design/pop-effect": "^0.1.0"
+    "@crystalflux/pop-effect": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=18"

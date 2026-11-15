@@ -1,9 +1,9 @@
-# @crystal-design/menu-glass
+# @crystalflux/menu-glass
 
 Liquid glass menu and context menu for React.
 
 ```bash
-npm install @crystal-design/menu-glass
+npm install @crystalflux/menu-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/menu-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GlassTimedButton } from '@crystal-design/timed-button-glass'
+import { GlassTimedButton } from '@crystalflux/timed-button-glass'
 import { glassAttrs, glassControls, glassProps, type Entry, type Values } from '../entry'
 
 function Demo({ v }: { v: Values }) {
@@ -28,7 +28,7 @@ function Demo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'timed-button-glass',
   name: 'Glass Timed Button',
-  pkg: '@crystal-design/timed-button-glass',
+  pkg: '@crystalflux/timed-button-glass',
   category: 'Actions',
   description: 'A glass action button that arms an undo window with a burning fuse around its rim.',
   controls: [
@@ -52,7 +52,7 @@ export const entry: Entry = {
       changedAttr('size', `size="${v.size}"`),
       changedAttr('pauseOnHover', `pauseOnHover={${v.pauseOnHover}}`),
     ].join('')
-    return `import { GlassTimedButton } from '@crystal-design/timed-button-glass'
+    return `import { GlassTimedButton } from '@crystalflux/timed-button-glass'
 
 <GlassTimedButton${glassAttrs(entry, v)}
   label="Archive"

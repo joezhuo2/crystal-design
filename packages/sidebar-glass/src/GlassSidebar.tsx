@@ -1,4 +1,4 @@
-import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/surface-glass'
+import { GlassSurface, type GlassSurfaceProps } from '@crystalflux/surface-glass'
 import type { MouseEventHandler, ReactNode } from 'react'
 import styles from './GlassSidebar.module.css'
 

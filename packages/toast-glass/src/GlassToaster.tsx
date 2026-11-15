@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useSyncExternalStore, type CSSProperties } from 'react'
 import { createPortal } from 'react-dom'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import styles from './GlassToaster.module.css'
 import { dismiss, getServerSnapshot, getSnapshot, subscribe, type ToastItem } from './store'
 import { createTimer } from './timer'

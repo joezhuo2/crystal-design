@@ -1,9 +1,9 @@
-# @crystal-design/checkbox-glass
+# @crystalflux/checkbox-glass
 
 Liquid glass checkbox for React.
 
 ```bash
-npm install @crystal-design/checkbox-glass
+npm install @crystalflux/checkbox-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/checkbox-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

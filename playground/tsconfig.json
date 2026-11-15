@@ -5,7 +5,7 @@
     "emitDeclarationOnly": false,
     "noEmit": true,
     "paths": {
-      "@crystal-design/*": ["../packages/*/src/index.ts"]
+      "@crystalflux/*": ["../packages/*/src/index.ts"]
     }
   },
   "include": ["src"],

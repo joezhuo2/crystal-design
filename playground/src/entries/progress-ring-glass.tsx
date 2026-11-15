@@ -1,10 +1,10 @@
-import { GlassProgressRing } from '@crystal-design/progress-ring-glass'
+import { GlassProgressRing } from '@crystalflux/progress-ring-glass'
 import { glassAttrs, glassProps, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'progress-ring-glass',
   name: 'Glass Progress Ring',
-  pkg: '@crystal-design/progress-ring-glass',
+  pkg: '@crystalflux/progress-ring-glass',
   category: 'Feedback',
   description: 'A progress ring set on a round glass disc.',
   controls: [
@@ -30,7 +30,7 @@ export const entry: Entry = {
       </GlassProgressRing>
     )
   },
-  code: (v) => `import { GlassProgressRing } from '@crystal-design/progress-ring-glass'
+  code: (v) => `import { GlassProgressRing } from '@crystalflux/progress-ring-glass'
 
 <GlassProgressRing${glassAttrs(entry, v)}
   value={${v.value}}

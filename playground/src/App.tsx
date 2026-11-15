@@ -9,11 +9,11 @@ import {
   type ReactNode,
 } from 'react'
 import { flushSync } from 'react-dom'
-import { GlassSurface } from '@crystal-design/surface-glass'
-import { Checkbox } from '@crystal-design/checkbox'
-import { ColorPicker } from '@crystal-design/color-picker'
-import { FeedbackButton } from '@crystal-design/feedback-button'
-import { Tooltip } from '@crystal-design/tooltip'
+import { GlassSurface } from '@crystalflux/surface-glass'
+import { Checkbox } from '@crystalflux/checkbox'
+import { ColorPicker } from '@crystalflux/color-picker'
+import { FeedbackButton } from '@crystalflux/feedback-button'
+import { Tooltip } from '@crystalflux/tooltip'
 import { catalog, defaultsOf, lookControls, lookVars, type Control, type Entry, type Values } from './catalog'
 
 const calm = () => matchMedia('(prefers-reduced-motion: reduce)').matches

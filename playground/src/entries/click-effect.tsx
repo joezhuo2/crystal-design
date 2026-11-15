@@ -1,6 +1,6 @@
-import { GlassButton } from '@crystal-design/button-glass'
-import { GlassCard } from '@crystal-design/card-glass'
-import { ClickEffect, type ClickEffectName } from '@crystal-design/click-effect'
+import { GlassButton } from '@crystalflux/button-glass'
+import { GlassCard } from '@crystalflux/card-glass'
+import { ClickEffect, type ClickEffectName } from '@crystalflux/click-effect'
 import { changed, type Entry } from '../entry'
 
 const Star = () => (
@@ -12,7 +12,7 @@ const Star = () => (
 export const entry: Entry = {
   id: 'click-effect',
   name: 'Click Effect',
-  pkg: '@crystal-design/click-effect',
+  pkg: '@crystalflux/click-effect',
   category: 'Effects',
   description: 'Press scale that depends on element size, with a spring release and a click animation, around any element.',
   glass: false,
@@ -41,7 +41,7 @@ export const entry: Entry = {
     </div>
   ),
   code(v) {
-    return `import { ClickEffect, type ClickEffectName } from '@crystal-design/click-effect'
+    return `import { ClickEffect, type ClickEffectName } from '@crystalflux/click-effect'
 
 <ClickEffect${changed(this, v, 'effect') ? `\n  effect="${v.effect}"` : ''}>
   <GlassButton>Go</GlassButton>

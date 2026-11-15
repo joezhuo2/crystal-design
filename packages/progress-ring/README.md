@@ -1,9 +1,9 @@
-# @crystal-design/progress-ring
+# @crystalflux/progress-ring
 
 Circular progress ring with level colours for React.
 
 ```bash
-npm install @crystal-design/progress-ring
+npm install @crystalflux/progress-ring
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/progress-ring) · [All components](https://github.com/joezhuo2/crystal-design#readme)

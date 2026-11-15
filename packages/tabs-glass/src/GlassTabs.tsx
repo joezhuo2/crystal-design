@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState, type KeyboardEvent } from 'react'
-import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/surface-glass'
+import { GlassSurface, type GlassSurfaceProps } from '@crystalflux/surface-glass'
 import styles from './GlassTabs.module.css'
 
 export type GlassTabItem = string | { value: string; label: string }

@@ -1,6 +1,6 @@
 import { useState, type CSSProperties } from 'react'
-import { GlideEffect } from '@crystal-design/glide-effect'
-import { GlassNavbar } from '@crystal-design/navbar-glass'
+import { GlideEffect } from '@crystalflux/glide-effect'
+import { GlassNavbar } from '@crystalflux/navbar-glass'
 import { changed, Glyph, glyphs, styleAttr, type Entry, type Values } from '../entry'
 
 const labels = ['Home', 'Components', 'Favorites']
@@ -112,7 +112,7 @@ const snippets: Record<string, (style: string) => string> = {
 export const entry: Entry = {
   id: 'glide-effect',
   name: 'Glide Effect',
-  pkg: '@crystal-design/glide-effect',
+  pkg: '@crystalflux/glide-effect',
   category: 'Effects',
   description: 'A stretchy indicator that glides behind the active tab, link or sidebar row.',
   glass: false,
@@ -124,8 +124,8 @@ export const entry: Entry = {
   code(v) {
     const style = styleAttr({ "'--cd-glide-radius'": changed(this, v, 'radius') && `${v.radius}px` })
     const layout = v.layout as string
-    return `import { GlideEffect } from '@crystal-design/glide-effect'${
-      layout === 'Navbar' ? `\nimport { GlassNavbar } from '@crystal-design/navbar-glass'` : ''
+    return `import { GlideEffect } from '@crystalflux/glide-effect'${
+      layout === 'Navbar' ? `\nimport { GlassNavbar } from '@crystalflux/navbar-glass'` : ''
     }
 
 ${snippets[layout](style)}`

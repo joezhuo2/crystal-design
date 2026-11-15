@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { GlassButton } from '@crystal-design/button-glass'
-import { GlassCommandPalette, type CommandItem } from '@crystal-design/command-palette-glass'
+import { GlassButton } from '@crystalflux/button-glass'
+import { GlassCommandPalette, type CommandItem } from '@crystalflux/command-palette-glass'
 import type { Entry, Values } from '../entry'
 
 const items: CommandItem[] = [
@@ -31,7 +31,7 @@ function PaletteDemo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'command-palette-glass',
   name: 'Glass Command Palette',
-  pkg: '@crystal-design/command-palette-glass',
+  pkg: '@crystalflux/command-palette-glass',
   category: 'Overlays',
   description: 'Searchable command list in a glass overlay, opened with Ctrl or Cmd K.',
   controls: [
@@ -40,7 +40,7 @@ export const entry: Entry = {
   ],
   render: (v) => <PaletteDemo v={v} />,
   code: (v) => `import { useState } from 'react'
-import { GlassCommandPalette } from '@crystal-design/command-palette-glass'
+import { GlassCommandPalette } from '@crystalflux/command-palette-glass'
 
 const [open, setOpen] = useState(false)
 const items = [

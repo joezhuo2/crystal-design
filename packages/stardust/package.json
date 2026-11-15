@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/stardust",
+  "name": "@crystalflux/stardust",
   "version": "0.1.0",
   "description": "Stardust trail that follows the cursor for React",
   "license": "MIT",

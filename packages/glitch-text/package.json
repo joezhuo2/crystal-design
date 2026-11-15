@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/glitch-text",
+  "name": "@crystalflux/glitch-text",
   "version": "0.1.0",
   "description": "Text that glitches in and out with RGB split and displacement, for React",
   "license": "MIT",

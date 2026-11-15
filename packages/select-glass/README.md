@@ -1,9 +1,9 @@
-# @crystal-design/select-glass
+# @crystalflux/select-glass
 
 Liquid glass select for React.
 
 ```bash
-npm install @crystal-design/select-glass
+npm install @crystalflux/select-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/select-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

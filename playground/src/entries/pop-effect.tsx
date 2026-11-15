@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { PopEffect } from '@crystal-design/pop-effect'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { PopEffect } from '@crystalflux/pop-effect'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import { changed, type Entry } from '../entry'
 
 type Props = { origin: string; scale: number; duration: number; exitDuration: number }
@@ -29,7 +29,7 @@ function Demo({ origin, scale, duration, exitDuration }: Props) {
 export const entry: Entry = {
   id: 'pop-effect',
   name: 'Pop Effect',
-  pkg: '@crystal-design/pop-effect',
+  pkg: '@crystalflux/pop-effect',
   category: 'Effects',
   description: 'Springy scale and fade entrance and exit for any element, unmounting after the exit plays.',
   glass: false,
@@ -60,7 +60,7 @@ export const entry: Entry = {
       changed(this, v, 'duration') ? ` duration={${v.duration}}` : '',
       changed(this, v, 'exitDuration') ? ` exitDuration={${v.exitDuration}}` : '',
     ].join('')
-    return `import { PopEffect } from '@crystal-design/pop-effect'
+    return `import { PopEffect } from '@crystalflux/pop-effect'
 
 <PopEffect show={open}${props}>
   <div>Anything</div>

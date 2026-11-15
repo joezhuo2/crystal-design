@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/tooltip-glass",
+  "name": "@crystalflux/tooltip-glass",
   "version": "0.1.0",
   "description": "Liquid glass tooltip for React",
   "license": "MIT",
@@ -28,8 +28,8 @@
     "build": "vite build --config ../../vite.lib.ts && tsc -p ."
   },
   "dependencies": {
-    "@crystal-design/surface-glass": "^0.1.0",
-    "@crystal-design/position": "^0.1.0"
+    "@crystalflux/surface-glass": "^0.1.0",
+    "@crystalflux/position": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=18",

@@ -1,10 +1,10 @@
-import { GlassCard } from '@crystal-design/card-glass'
+import { GlassCard } from '@crystalflux/card-glass'
 import { changed, glassAttrs, glassControls, glassProps, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'spotlight',
   name: 'Spotlight',
-  pkg: '@crystal-design/spotlight',
+  pkg: '@crystalflux/spotlight',
   category: 'Effects',
   hover: true,
   description: 'Cursor-lit border and inner glow that follow the pointer across a surface.',
@@ -23,7 +23,7 @@ export const entry: Entry = {
     </GlassCard>
   ),
   code: (v) =>
-    `import { GlassCard } from '@crystal-design/card-glass'
+    `import { GlassCard } from '@crystalflux/card-glass'
 
 <GlassCard${glassAttrs(entry, v)}${
       !v.on ? '' : changed(entry, v, 'color') ? ` spotlight="${v.color}"` : ' spotlight'

@@ -1,9 +1,9 @@
-# @crystal-design/accordion-glass
+# @crystalflux/accordion-glass
 
 Liquid glass accordion for React.
 
 ```bash
-npm install @crystal-design/accordion-glass
+npm install @crystalflux/accordion-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/accordion-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

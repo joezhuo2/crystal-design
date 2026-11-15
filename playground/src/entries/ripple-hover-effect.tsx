@@ -1,10 +1,10 @@
-import { RippleHoverEffect } from '@crystal-design/ripple-hover-effect'
+import { RippleHoverEffect } from '@crystalflux/ripple-hover-effect'
 import { changed, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'ripple-hover-effect',
   name: 'Ripple Hover Effect',
-  pkg: '@crystal-design/ripple-hover-effect',
+  pkg: '@crystalflux/ripple-hover-effect',
   category: 'Effects',
   description: 'Text whose characters lift and swell around the pointer, with a wave travelling out from where it enters.',
   glass: false,
@@ -34,7 +34,7 @@ export const entry: Entry = {
       .map((k) => `\n  ${k}={${v[k]}}`)
       .join('')
     const wave = v.wave ? '' : '\n  wave={false}'
-    return `import { RippleHoverEffect } from '@crystal-design/ripple-hover-effect'
+    return `import { RippleHoverEffect } from '@crystalflux/ripple-hover-effect'
 
 <RippleHoverEffect
   text="${v.text}"${props}${wave}

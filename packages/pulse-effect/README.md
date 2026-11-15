@@ -1,9 +1,9 @@
-# @crystal-design/pulse-effect
+# @crystalflux/pulse-effect
 
 Breathing opacity, scale or glow pulse for any element in React.
 
 ```bash
-npm install @crystal-design/pulse-effect
+npm install @crystalflux/pulse-effect
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/pulse-effect) · [All components](https://github.com/joezhuo2/crystal-design#readme)

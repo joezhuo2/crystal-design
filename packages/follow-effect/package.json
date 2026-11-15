@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/follow-effect",
+  "name": "@crystalflux/follow-effect",
   "version": "0.1.0",
   "description": "Highlight pill that follows the hovered or focused item in lists, menus and navbars for React",
   "license": "MIT",

@@ -1,9 +1,9 @@
-# @crystal-design/surface-glass
+# @crystalflux/surface-glass
 
 Liquid glass surface for React that refracts whatever is behind it.
 
 ```bash
-npm install @crystal-design/surface-glass
+npm install @crystalflux/surface-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/surface-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

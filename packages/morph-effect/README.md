@@ -1,9 +1,9 @@
-# @crystal-design/morph-effect
+# @crystalflux/morph-effect
 
 Wrapper that morphs any panel from a pill into its full shape for React.
 
 ```bash
-npm install @crystal-design/morph-effect
+npm install @crystalflux/morph-effect
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/morph-effect) · [All components](https://github.com/joezhuo2/crystal-design#readme)

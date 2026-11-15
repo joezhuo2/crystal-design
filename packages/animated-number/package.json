@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/animated-number",
+  "name": "@crystalflux/animated-number",
   "version": "0.1.0",
   "description": "Number that animates between values for React",
   "license": "MIT",

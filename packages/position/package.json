@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/position",
+  "name": "@crystalflux/position",
   "version": "0.1.0",
   "description": "Popup placement and dismiss helpers for React",
   "license": "MIT",

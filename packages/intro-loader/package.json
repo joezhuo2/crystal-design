@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/intro-loader",
+  "name": "@crystalflux/intro-loader",
   "version": "0.1.0",
   "description": "Boot-style intro loading overlay with stages, progress and exit for React",
   "license": "MIT",

@@ -1,9 +1,9 @@
-# @crystal-design/navbar
+# @crystalflux/navbar
 
 Themed floating navbar for React.
 
 ```bash
-npm install @crystal-design/navbar
+npm install @crystalflux/navbar
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/navbar) · [All components](https://github.com/joezhuo2/crystal-design#readme)

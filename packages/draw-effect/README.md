@@ -1,9 +1,9 @@
-# @crystal-design/draw-effect
+# @crystalflux/draw-effect
 
 Stroke draw-in and wipe effect for any SVG in React.
 
 ```bash
-npm install @crystal-design/draw-effect
+npm install @crystalflux/draw-effect
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/draw-effect) · [All components](https://github.com/joezhuo2/crystal-design#readme)

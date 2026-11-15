@@ -1,9 +1,9 @@
-# @crystal-design/island-glass
+# @crystalflux/island-glass
 
 Liquid glass island that morphs from pill to panel for React.
 
 ```bash
-npm install @crystal-design/island-glass
+npm install @crystalflux/island-glass
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/island-glass) · [All components](https://github.com/joezhuo2/crystal-design#readme)

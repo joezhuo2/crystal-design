@@ -1,9 +1,9 @@
-# @crystal-design/text-scramble
+# @crystalflux/text-scramble
 
 Text that decodes into place through look-alike glyphs, for React.
 
 ```bash
-npm install @crystal-design/text-scramble
+npm install @crystalflux/text-scramble
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/text-scramble) · [All components](https://github.com/joezhuo2/crystal-design#readme)

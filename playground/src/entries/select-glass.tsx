@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GlassSelect } from '@crystal-design/select-glass'
+import { GlassSelect } from '@crystalflux/select-glass'
 import { changed, type Entry } from '../entry'
 
 const options = ['Apple', 'Banana', 'Cherry', 'Dragon fruit', 'Elderberry']
@@ -21,7 +21,7 @@ function SelectDemo({ placeholder, disabled }: { placeholder: string; disabled: 
 export const entry: Entry = {
   id: 'select-glass',
   name: 'Glass Select',
-  pkg: '@crystal-design/select-glass',
+  pkg: '@crystalflux/select-glass',
   category: 'Inputs',
   description: 'Glass listbox with a gliding highlight and full keyboard support.',
   controls: [
@@ -29,7 +29,7 @@ export const entry: Entry = {
     { key: 'disabled', label: 'Disabled', type: 'toggle', value: false },
   ],
   render: (v) => <SelectDemo placeholder={v.placeholder as string} disabled={v.disabled as boolean} />,
-  code: (v) => `import { GlassSelect } from '@crystal-design/select-glass'
+  code: (v) => `import { GlassSelect } from '@crystalflux/select-glass'
 
 <GlassSelect
   aria-label="Fruit"

@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/glide-effect",
+  "name": "@crystalflux/glide-effect",
   "version": "0.1.0",
   "description": "Stretchy indicator that glides behind the active tab, link or row for React",
   "license": "MIT",

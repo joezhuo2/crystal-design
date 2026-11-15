@@ -1,9 +1,9 @@
-# @crystal-design/animated-number
+# @crystalflux/animated-number
 
 Number that animates between values for React.
 
 ```bash
-npm install @crystal-design/animated-number
+npm install @crystalflux/animated-number
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/animated-number) · [All components](https://github.com/joezhuo2/crystal-design#readme)

@@ -1,5 +1,5 @@
-import { GlassSurface, type GlassSurfaceProps } from '@crystal-design/surface-glass'
-import { TimedButtonBase, type TimedButtonProps } from '@crystal-design/timed-button'
+import { GlassSurface, type GlassSurfaceProps } from '@crystalflux/surface-glass'
+import { TimedButtonBase, type TimedButtonProps } from '@crystalflux/timed-button'
 
 export type GlassTimedButtonProps = TimedButtonProps &
   Pick<GlassSurfaceProps<'button'>, 'radius' | 'strength' | 'bezel' | 'mask' | 'spotlight'>

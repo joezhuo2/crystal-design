@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { AnimatedNumber } from '@crystal-design/animated-number'
+import { AnimatedNumber } from '@crystalflux/animated-number'
 import { changed, type Entry, type Values } from '../entry'
 
 function Demo({ v }: { v: Values }) {
@@ -18,7 +18,7 @@ function Demo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'animated-number',
   name: 'Animated Number',
-  pkg: '@crystal-design/animated-number',
+  pkg: '@crystalflux/animated-number',
   category: 'Effects',
   description: 'Number that tweens to its new value and retargets smoothly when interrupted.',
   glass: false,
@@ -28,7 +28,7 @@ export const entry: Entry = {
   ],
   render: (v) => <Demo v={v} />,
   code: (v) =>
-    `import { AnimatedNumber } from '@crystal-design/animated-number'
+    `import { AnimatedNumber } from '@crystalflux/animated-number'
 
 <AnimatedNumber value={${v.value}}${changed(entry, v, 'duration') ? ` duration={${v.duration}}` : ''} />`,
 }

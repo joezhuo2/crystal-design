@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { GlassButton } from '@crystal-design/button-glass'
-import { GlassToaster, toast } from '@crystal-design/toast-glass'
+import { GlassButton } from '@crystalflux/button-glass'
+import { GlassToaster, toast } from '@crystalflux/toast-glass'
 import { changed, type Entry, type Values } from '../entry'
 
 type Position = 'bottom-right' | 'bottom-center' | 'top-right' | 'top-center'
@@ -28,7 +28,7 @@ function ToastDemo({ v }: { v: Values }) {
 export const entry: Entry = {
   id: 'toast-glass',
   name: 'Glass Toast',
-  pkg: '@crystal-design/toast-glass',
+  pkg: '@crystalflux/toast-glass',
   category: 'Feedback',
   description: 'Glass toasts with a border that burns down like a fuse.',
   controls: [
@@ -50,7 +50,7 @@ export const entry: Entry = {
       changed(entry, v, 'duration') && `duration: ${v.duration}`,
       v.undo && `action: { label: 'Undo', onClick: undo }`,
     ].filter(Boolean)
-    return `import { toast, GlassToaster } from '@crystal-design/toast-glass'
+    return `import { toast, GlassToaster } from '@crystalflux/toast-glass'
 
 <GlassToaster${changed(entry, v, 'position') ? ` position="${v.position}"` : ''}${changed(entry, v, 'max') ? ` max={${v.max}}` : ''} />
 

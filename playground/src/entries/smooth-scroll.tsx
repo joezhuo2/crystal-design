@@ -1,5 +1,5 @@
 import { useRef, type RefObject } from 'react'
-import { useSmoothScroll } from '@crystal-design/smooth-scroll'
+import { useSmoothScroll } from '@crystalflux/smooth-scroll'
 import { changed, type Entry } from '../entry'
 
 function Smooth({ boxRef, ease }: { boxRef: RefObject<HTMLDivElement | null>; ease: number }) {
@@ -29,7 +29,7 @@ function ScrollBox({ smooth, ease }: { smooth: boolean; ease: number }) {
 export const entry: Entry = {
   id: 'smooth-scroll',
   name: 'Smooth Scroll',
-  pkg: '@crystal-design/smooth-scroll',
+  pkg: '@crystalflux/smooth-scroll',
   category: 'Effects',
   description: 'Inertial wheel scrolling for the window or any scrollable element.',
   glass: false,
@@ -41,7 +41,7 @@ export const entry: Entry = {
   code(v) {
     const ease = changed(this, v, 'ease') ? `, ${(v.ease as number) / 100}` : ''
     return `import { useRef } from 'react'
-import { useSmoothScroll } from '@crystal-design/smooth-scroll'
+import { useSmoothScroll } from '@crystalflux/smooth-scroll'
 
 function Panel() {
   const ref = useRef<HTMLDivElement>(null)

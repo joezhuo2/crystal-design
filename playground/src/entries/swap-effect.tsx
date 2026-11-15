@@ -1,5 +1,5 @@
-import { SwapEffect } from '@crystal-design/swap-effect'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { SwapEffect } from '@crystalflux/swap-effect'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import { useState } from 'react'
 import type { Entry } from '../entry'
 
@@ -27,7 +27,7 @@ function Demo({ duration, direction }: { duration: number; direction: 'up' | 'do
 export const entry: Entry = {
   id: 'swap-effect',
   name: 'Swap Effect',
-  pkg: '@crystal-design/swap-effect',
+  pkg: '@crystalflux/swap-effect',
   category: 'Effects',
   description: 'Swaps content with a blur, fade and slide while the width animates.',
   glass: false,
@@ -36,7 +36,7 @@ export const entry: Entry = {
     { key: 'duration', label: 'Duration (ms)', type: 'range', min: 100, max: 1000, value: 300 },
   ],
   render: (v) => <Demo duration={v.duration as number} direction={v.direction as 'up' | 'down' | 'none'} />,
-  code: (v) => `import { SwapEffect } from '@crystal-design/swap-effect'
+  code: (v) => `import { SwapEffect } from '@crystalflux/swap-effect'
 
 <SwapEffect swapKey={state} direction="${v.direction}" duration={${v.duration}}>
   {labels[state]}

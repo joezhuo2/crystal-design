@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { App } from './App'
-import { smoothScroll } from '@crystal-design/smooth-scroll'
+import { smoothScroll } from '@crystalflux/smooth-scroll'
 import './app.css'
 
 smoothScroll()

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Sidebar, SidebarItem } from '@crystal-design/sidebar'
+import { Sidebar, SidebarItem } from '@crystalflux/sidebar'
 import { changed, Glyph, glyphs, styleAttr, type Entry } from '../entry'
 
 const items = [
@@ -28,7 +28,7 @@ function Demo({ padding }: { padding: number }) {
 export const entry: Entry = {
   id: 'sidebar',
   name: 'Sidebar',
-  pkg: '@crystal-design/sidebar',
+  pkg: '@crystalflux/sidebar',
   category: 'Navigation',
   description: 'Solid themed icon rail that expands on hover or focus.',
   glass: false,
@@ -36,7 +36,7 @@ export const entry: Entry = {
   render: (v) => <Demo padding={v.padding as number} />,
   code(v) {
     return `import { useState } from 'react'
-import { Sidebar, SidebarItem } from '@crystal-design/sidebar'
+import { Sidebar, SidebarItem } from '@crystalflux/sidebar'
 
 const [active, setActive] = useState('Home')
 

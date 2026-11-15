@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/sidebar",
+  "name": "@crystalflux/sidebar",
   "version": "0.1.0",
   "description": "Themed icon rail sidebar that expands on hover for React",
   "license": "MIT",

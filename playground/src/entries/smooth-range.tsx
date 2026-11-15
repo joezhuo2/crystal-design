@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SmoothRange } from '@crystal-design/smooth-range'
+import { SmoothRange } from '@crystalflux/smooth-range'
 import { changed, type Entry } from '../entry'
 
 function Demo({ continuous, step }: { continuous: boolean; step: number }) {
@@ -23,7 +23,7 @@ function Demo({ continuous, step }: { continuous: boolean; step: number }) {
 export const entry: Entry = {
   id: 'smooth-range',
   name: 'Smooth Range',
-  pkg: '@crystal-design/smooth-range',
+  pkg: '@crystalflux/smooth-range',
   category: 'Inputs',
   description: 'A native range input whose value eases toward the clicked point instead of jumping.',
   glass: false,
@@ -37,7 +37,7 @@ export const entry: Entry = {
       changed(this, v, 'step') ? `\n  step={${v.step}}` : '',
       v.continuous ? '\n  continuous' : '',
     ].join('')
-    return `import { SmoothRange } from '@crystal-design/smooth-range'
+    return `import { SmoothRange } from '@crystalflux/smooth-range'
 
 <SmoothRange
   min={0}

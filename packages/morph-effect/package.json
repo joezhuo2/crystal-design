@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/morph-effect",
+  "name": "@crystalflux/morph-effect",
   "version": "0.1.0",
   "description": "Wrapper that morphs any panel from a pill into its full shape for React",
   "license": "MIT",

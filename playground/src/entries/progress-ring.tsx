@@ -1,10 +1,10 @@
-import { ProgressRing } from '@crystal-design/progress-ring'
+import { ProgressRing } from '@crystalflux/progress-ring'
 import { changed, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'progress-ring',
   name: 'Progress Ring',
-  pkg: '@crystal-design/progress-ring',
+  pkg: '@crystalflux/progress-ring',
   category: 'Feedback',
   description: 'A circular progress ring that shifts colour at warn and high thresholds.',
   glass: false,
@@ -31,7 +31,7 @@ export const entry: Entry = {
       (changed(this, v, 'size') ? `\n  size={${v.size}}` : '') +
       (changed(this, v, 'thickness') ? `\n  thickness={${v.thickness}}` : '') +
       (v.pulse ? '\n  pulse' : '')
-    return `import { ProgressRing } from '@crystal-design/progress-ring'
+    return `import { ProgressRing } from '@crystalflux/progress-ring'
 
 <ProgressRing
   value={${v.value}}

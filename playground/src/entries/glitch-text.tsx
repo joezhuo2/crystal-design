@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GlitchText } from '@crystal-design/glitch-text'
+import { GlitchText } from '@crystalflux/glitch-text'
 import { changed, type Entry } from '../entry'
 
 function Demo({ duration, intensity }: { duration: number; intensity: number }) {
@@ -21,7 +21,7 @@ function Demo({ duration, intensity }: { duration: number; intensity: number }) 
 export const entry: Entry = {
   id: 'glitch-text',
   name: 'Glitch Text',
-  pkg: '@crystal-design/glitch-text',
+  pkg: '@crystalflux/glitch-text',
   category: 'Effects',
   description: 'Text that glitches in and out with RGB-split slices and a stepped displacement filter.',
   glass: false,
@@ -33,7 +33,7 @@ export const entry: Entry = {
   code(v) {
     const dur = changed(this, v, 'duration') ? `\n  duration={${v.duration}}` : ''
     const int = changed(this, v, 'intensity') ? `\n  intensity={${(v.intensity as number) / 10}}` : ''
-    return `import { GlitchText } from '@crystal-design/glitch-text'
+    return `import { GlitchText } from '@crystalflux/glitch-text'
 
 <GlitchText
   show={show}${dur}${int}

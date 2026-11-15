@@ -1,9 +1,9 @@
-# @crystal-design/orbit-effect
+# @crystalflux/orbit-effect
 
 Orbiting border highlight for any React element.
 
 ```bash
-npm install @crystal-design/orbit-effect
+npm install @crystalflux/orbit-effect
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/orbit-effect) · [All components](https://github.com/joezhuo2/crystal-design#readme)

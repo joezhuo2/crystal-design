@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/spotlight",
+  "name": "@crystalflux/spotlight",
   "version": "0.1.0",
   "description": "Cursor-following light hook for React",
   "license": "MIT",

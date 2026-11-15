@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/timed-button",
+  "name": "@crystalflux/timed-button",
   "version": "0.1.0",
   "description": "Action button with a timed undo window and a burning fuse for React",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "build": "vite build --config ../../vite.lib.ts && tsc -p ."
   },
   "dependencies": {
-    "@crystal-design/fuse-effect": "^0.1.0"
+    "@crystalflux/fuse-effect": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=18"

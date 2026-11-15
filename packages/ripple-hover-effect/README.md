@@ -1,9 +1,9 @@
-# @crystal-design/ripple-hover-effect
+# @crystalflux/ripple-hover-effect
 
 Text whose characters ripple under the pointer for React.
 
 ```bash
-npm install @crystal-design/ripple-hover-effect
+npm install @crystalflux/ripple-hover-effect
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/ripple-hover-effect) · [All components](https://github.com/joezhuo2/crystal-design#readme)

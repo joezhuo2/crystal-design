@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { IntroLoader } from '@crystal-design/intro-loader'
+import { IntroLoader } from '@crystalflux/intro-loader'
 import { changed, type Entry } from '../entry'
 
 const stages = ['mapping header', 'loading assets', 'allocating memory', 'warming up', 'ready']
@@ -34,7 +34,7 @@ function Demo({ duration, exitDuration }: { duration: number; exitDuration: numb
 export const entry: Entry = {
   id: 'intro-loader',
   name: 'Intro Loader',
-  pkg: '@crystal-design/intro-loader',
+  pkg: '@crystalflux/intro-loader',
   category: 'Feedback',
   description: 'A boot-style loading overlay that steps through stages, then fades out.',
   glass: false,
@@ -48,7 +48,7 @@ export const entry: Entry = {
       changed(this, v, 'duration') ? `\n  duration={${v.duration}}` : '',
       changed(this, v, 'exitDuration') ? `\n  exitDuration={${v.exitDuration}}` : '',
     ].join('')
-    return `import { IntroLoader } from '@crystal-design/intro-loader'
+    return `import { IntroLoader } from '@crystalflux/intro-loader'
 
 <IntroLoader
   fixed

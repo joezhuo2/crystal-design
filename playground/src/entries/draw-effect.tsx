@@ -1,5 +1,5 @@
-import { DrawEffect } from '@crystal-design/draw-effect'
-import { GlassSurface } from '@crystal-design/surface-glass'
+import { DrawEffect } from '@crystalflux/draw-effect'
+import { GlassSurface } from '@crystalflux/surface-glass'
 import { useEffect, useState } from 'react'
 import type { Entry } from '../entry'
 
@@ -37,7 +37,7 @@ function Demo({ duration, stagger, mode }: { duration: number; stagger: number; 
 export const entry: Entry = {
   id: 'draw-effect',
   name: 'Draw Effect',
-  pkg: '@crystal-design/draw-effect',
+  pkg: '@crystalflux/draw-effect',
   category: 'Effects',
   description: 'Draws any inline SVG in stroke by stroke, or wipes it in.',
   glass: false,
@@ -47,7 +47,7 @@ export const entry: Entry = {
     { key: 'stagger', label: 'Stagger (ms)', type: 'range', min: 0, max: 400, value: 150 },
   ],
   render: (v) => <Demo duration={v.duration as number} stagger={v.stagger as number} mode={v.mode as 'stroke' | 'wipe'} />,
-  code: (v) => `import { DrawEffect } from '@crystal-design/draw-effect'
+  code: (v) => `import { DrawEffect } from '@crystalflux/draw-effect'
 
 <DrawEffect show={done} mode="${v.mode}" duration={${v.duration}} stagger={${v.stagger}}>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">

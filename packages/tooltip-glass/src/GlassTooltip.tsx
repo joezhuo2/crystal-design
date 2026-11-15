@@ -11,8 +11,8 @@ import {
   type ReactNode,
 } from 'react'
 import { createPortal } from 'react-dom'
-import { GlassSurface } from '@crystal-design/surface-glass'
-import { place, type Side } from '@crystal-design/position'
+import { GlassSurface } from '@crystalflux/surface-glass'
+import { place, type Side } from '@crystalflux/position'
 import styles from './GlassTooltip.module.css'
 
 const WARM_MS = 400

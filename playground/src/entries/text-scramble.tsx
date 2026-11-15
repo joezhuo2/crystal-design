@@ -1,10 +1,10 @@
-import { TextScramble } from '@crystal-design/text-scramble'
+import { TextScramble } from '@crystalflux/text-scramble'
 import { changed, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'text-scramble',
   name: 'Text Scramble',
-  pkg: '@crystal-design/text-scramble',
+  pkg: '@crystalflux/text-scramble',
   category: 'Effects',
   description: 'Text that decodes into place left to right through look-alike glyphs.',
   glass: false,
@@ -24,7 +24,7 @@ export const entry: Entry = {
   ),
   code(v) {
     const trig = changed(this, v, 'trigger') ? `\n  trigger="${v.trigger}"` : ''
-    return `import { TextScramble } from '@crystal-design/text-scramble'
+    return `import { TextScramble } from '@crystalflux/text-scramble'
 
 <TextScramble
   text="${v.text}"

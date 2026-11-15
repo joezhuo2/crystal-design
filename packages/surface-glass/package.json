@@ -1,5 +1,5 @@
 {
-  "name": "@crystal-design/surface-glass",
+  "name": "@crystalflux/surface-glass",
   "version": "0.1.0",
   "description": "Liquid glass surface for React that refracts whatever is behind it",
   "license": "MIT",
@@ -34,6 +34,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@crystal-design/spotlight": "^0.1.0"
+    "@crystalflux/spotlight": "^0.1.0"
   }
 }

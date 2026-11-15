@@ -1,11 +1,11 @@
-import { GlassButton } from '@crystal-design/button-glass'
-import { GlassIsland } from '@crystal-design/island-glass'
+import { GlassButton } from '@crystalflux/button-glass'
+import { GlassIsland } from '@crystalflux/island-glass'
 import { glassAttrs, glassControls, glassProps, type Entry } from '../entry'
 
 export const entry: Entry = {
   id: 'island-glass',
   name: 'Glass Island',
-  pkg: '@crystal-design/island-glass',
+  pkg: '@crystalflux/island-glass',
   category: 'Surfaces',
   description: 'A pill that morphs into a panel.',
   controls: [
@@ -28,8 +28,8 @@ export const entry: Entry = {
       </div>
     </GlassIsland>
   ),
-  code: (v) => `import { GlassButton } from '@crystal-design/button-glass'
-import { GlassIsland } from '@crystal-design/island-glass'
+  code: (v) => `import { GlassButton } from '@crystalflux/button-glass'
+import { GlassIsland } from '@crystalflux/island-glass'
 
 <GlassIsland${v.expandOn !== 'click' ? ` expandOn="${v.expandOn}"` : ''}${glassAttrs(entry, v)} pill={<span>&#9679; Recording 0:42</span>}>
   <strong>Recording 0:42</strong>

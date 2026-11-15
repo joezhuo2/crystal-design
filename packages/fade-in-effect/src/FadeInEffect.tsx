@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type ElementType, type HTMLAttributes, type ReactNode } from 'react'
-import { usePresence } from '@crystal-design/pop-effect'
+import { usePresence } from '@crystalflux/pop-effect'
 import styles from './FadeInEffect.module.css'
 import { splitText, staggerDelay, type Split } from './split'
 

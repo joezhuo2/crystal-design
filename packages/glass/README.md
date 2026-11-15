@@ -1,9 +1,9 @@
-# @crystal-design/glass
+# @crystalflux/glass
 
 Every Crystal Design component for React in one package.
 
 ```bash
-npm install @crystal-design/glass
+npm install @crystalflux/glass
 ```
 
 [Playground with live demos and code](https://crystal-design.vercel.app) · [All components](https://github.com/joezhuo2/crystal-design#readme)

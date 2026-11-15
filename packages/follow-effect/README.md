@@ -1,9 +1,9 @@
-# @crystal-design/follow-effect
+# @crystalflux/follow-effect
 
 Highlight pill that follows the hovered or focused item in lists, menus and navbars for React.
 
 ```bash
-npm install @crystal-design/follow-effect
+npm install @crystalflux/follow-effect
 ```
 
 [Live demo and code](https://crystal-design.vercel.app/#/follow-effect) · [All components](https://github.com/joezhuo2/crystal-design#readme)
