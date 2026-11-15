@@ -2,6 +2,13 @@
   "name": "@crystal-design/glide-effect",
   "version": "0.1.0",
   "description": "Stretchy indicator that glides behind the active tab, link or row for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/glide-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/glide-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

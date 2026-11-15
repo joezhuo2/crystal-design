@@ -2,6 +2,13 @@
   "name": "@crystal-design/command-palette-glass",
   "version": "0.1.0",
   "description": "Liquid glass command palette for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/command-palette-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/command-palette-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"

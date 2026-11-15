@@ -2,6 +2,13 @@
   "name": "@crystal-design/icon-glass",
   "version": "0.1.0",
   "description": "Liquid glass icon tile for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/icon-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/icon-glass",
   "type": "module",
   "sideEffects": ["**/*.css"],
   "files": ["dist"],

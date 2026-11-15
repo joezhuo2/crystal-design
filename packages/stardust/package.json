@@ -2,6 +2,13 @@
   "name": "@crystal-design/stardust",
   "version": "0.1.0",
   "description": "Stardust trail that follows the cursor for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/stardust"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/stardust",
   "type": "module",
   "sideEffects": [
     "**/*.css"

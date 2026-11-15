@@ -2,6 +2,13 @@
   "name": "@crystal-design/navbar",
   "version": "0.1.0",
   "description": "Themed floating navbar for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/navbar"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/navbar",
   "type": "module",
   "sideEffects": [
     "**/*.css"

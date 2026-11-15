@@ -2,6 +2,13 @@
   "name": "@crystal-design/tooltip",
   "version": "0.1.0",
   "description": "Themed CSS tooltip for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/tooltip"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/tooltip",
   "type": "module",
   "sideEffects": [
     "**/*.css"

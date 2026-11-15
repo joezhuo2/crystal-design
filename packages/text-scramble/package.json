@@ -2,6 +2,13 @@
   "name": "@crystal-design/text-scramble",
   "version": "0.1.0",
   "description": "Text that decodes into place through look-alike glyphs, for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/text-scramble"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/text-scramble",
   "type": "module",
   "sideEffects": [
     "**/*.css"

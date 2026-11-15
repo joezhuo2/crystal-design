@@ -2,6 +2,13 @@
   "name": "@crystal-design/checkbox",
   "version": "0.1.0",
   "description": "Animated checkbox for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/checkbox"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/checkbox",
   "type": "module",
   "sideEffects": [
     "**/*.css"

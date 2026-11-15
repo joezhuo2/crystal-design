@@ -2,6 +2,13 @@
   "name": "@crystal-design/select-glass",
   "version": "0.1.0",
   "description": "Liquid glass select for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/select-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/select-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"

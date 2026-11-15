@@ -2,6 +2,13 @@
   "name": "@crystal-design/fuse-effect",
   "version": "0.1.0",
   "description": "Burning fuse timer effect that wraps any element for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/fuse-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/fuse-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

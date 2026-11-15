@@ -2,6 +2,13 @@
   "name": "@crystal-design/timed-button",
   "version": "0.1.0",
   "description": "Action button with a timed undo window and a burning fuse for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/timed-button"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/timed-button",
   "type": "module",
   "sideEffects": [
     "**/*.css"

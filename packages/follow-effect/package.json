@@ -2,6 +2,13 @@
   "name": "@crystal-design/follow-effect",
   "version": "0.1.0",
   "description": "Highlight pill that follows the hovered or focused item in lists, menus and navbars for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/follow-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/follow-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

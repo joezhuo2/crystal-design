@@ -2,6 +2,13 @@
   "name": "@crystal-design/orbit-effect",
   "version": "0.1.0",
   "description": "Orbiting border highlight for any React element",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/orbit-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/orbit-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

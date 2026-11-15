@@ -2,6 +2,13 @@
   "name": "@crystal-design/toast-glass",
   "version": "0.1.0",
   "description": "Liquid glass toasts for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/toast-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/toast-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"

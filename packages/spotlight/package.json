@@ -2,6 +2,13 @@
   "name": "@crystal-design/spotlight",
   "version": "0.1.0",
   "description": "Cursor-following light hook for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/spotlight"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/spotlight",
   "type": "module",
   "sideEffects": [
     "**/*.css"

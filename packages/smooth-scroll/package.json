@@ -2,6 +2,13 @@
   "name": "@crystal-design/smooth-scroll",
   "version": "0.1.0",
   "description": "Smooth inertial wheel scrolling for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/smooth-scroll"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/smooth-scroll",
   "type": "module",
   "sideEffects": [
     "**/*.css"

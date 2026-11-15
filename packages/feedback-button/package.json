@@ -2,6 +2,13 @@
   "name": "@crystal-design/feedback-button",
   "version": "0.1.0",
   "description": "Button that shows busy, done and error status for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/feedback-button"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/feedback-button",
   "type": "module",
   "sideEffects": [
     "**/*.css"

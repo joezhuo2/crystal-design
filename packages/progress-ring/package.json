@@ -2,6 +2,13 @@
   "name": "@crystal-design/progress-ring",
   "version": "0.1.0",
   "description": "Circular progress ring with level colours for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/progress-ring"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/progress-ring",
   "type": "module",
   "sideEffects": [
     "**/*.css"

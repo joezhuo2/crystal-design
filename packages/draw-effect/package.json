@@ -2,6 +2,13 @@
   "name": "@crystal-design/draw-effect",
   "version": "0.1.0",
   "description": "Stroke draw-in and wipe effect for any SVG in React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/draw-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/draw-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

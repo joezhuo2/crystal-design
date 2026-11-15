@@ -2,6 +2,13 @@
   "name": "@crystal-design/pulse-effect",
   "version": "0.1.0",
   "description": "Breathing opacity, scale or glow pulse for any element in React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/pulse-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/pulse-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

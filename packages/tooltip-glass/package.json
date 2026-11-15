@@ -2,6 +2,13 @@
   "name": "@crystal-design/tooltip-glass",
   "version": "0.1.0",
   "description": "Liquid glass tooltip for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/tooltip-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/tooltip-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"

@@ -2,6 +2,13 @@
   "name": "@crystal-design/swap-effect",
   "version": "0.1.0",
   "description": "Blur, fade and slide content swap with animated width for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/swap-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/swap-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

@@ -2,6 +2,13 @@
   "name": "@crystal-design/button-glass",
   "version": "0.1.0",
   "description": "Liquid glass button for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/button-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/button-glass",
   "type": "module",
   "sideEffects": ["**/*.css"],
   "files": ["dist"],

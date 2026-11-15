@@ -2,6 +2,13 @@
   "name": "@crystal-design/timed-button-glass",
   "version": "0.1.0",
   "description": "Liquid glass action button with a timed undo window for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/timed-button-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/timed-button-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"

@@ -2,6 +2,13 @@
   "name": "@crystal-design/pop-effect",
   "version": "0.1.0",
   "description": "Springy scale and fade enter and exit with unmount for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/pop-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/pop-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

@@ -2,6 +2,13 @@
   "name": "@crystal-design/smooth-range",
   "version": "0.1.0",
   "description": "Range input that eases toward the clicked value for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/smooth-range"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/smooth-range",
   "type": "module",
   "sideEffects": [
     "**/*.css"

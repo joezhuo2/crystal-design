@@ -2,6 +2,13 @@
   "name": "@crystal-design/position",
   "version": "0.1.0",
   "description": "Popup placement and dismiss helpers for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/position"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/position",
   "type": "module",
   "sideEffects": [
     "**/*.css"

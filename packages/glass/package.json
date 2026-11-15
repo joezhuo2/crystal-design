@@ -2,6 +2,13 @@
   "name": "@crystal-design/glass",
   "version": "0.1.0",
   "description": "Every Crystal Design component for React in one package",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/glass"
+  },
+  "homepage": "https://crystal-design.vercel.app",
   "type": "module",
   "sideEffects": false,
   "files": [

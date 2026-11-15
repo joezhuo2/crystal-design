@@ -2,6 +2,13 @@
   "name": "@crystal-design/click-effect",
   "version": "0.1.0",
   "description": "Press scale and click animations for any React element",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/click-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/click-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

@@ -2,6 +2,13 @@
   "name": "@crystal-design/animated-number",
   "version": "0.1.0",
   "description": "Number that animates between values for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/animated-number"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/animated-number",
   "type": "module",
   "sideEffects": [
     "**/*.css"

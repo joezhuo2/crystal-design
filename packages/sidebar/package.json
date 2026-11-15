@@ -2,6 +2,13 @@
   "name": "@crystal-design/sidebar",
   "version": "0.1.0",
   "description": "Themed icon rail sidebar that expands on hover for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/sidebar"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/sidebar",
   "type": "module",
   "sideEffects": [
     "**/*.css"

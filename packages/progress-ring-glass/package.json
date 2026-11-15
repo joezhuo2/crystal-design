@@ -2,6 +2,13 @@
   "name": "@crystal-design/progress-ring-glass",
   "version": "0.1.0",
   "description": "Liquid glass progress ring for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/progress-ring-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/progress-ring-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"

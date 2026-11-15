@@ -2,6 +2,13 @@
   "name": "@crystal-design/intro-loader",
   "version": "0.1.0",
   "description": "Boot-style intro loading overlay with stages, progress and exit for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/intro-loader"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/intro-loader",
   "type": "module",
   "sideEffects": [
     "**/*.css"

@@ -2,6 +2,13 @@
   "name": "@crystal-design/color-picker",
   "version": "0.1.0",
   "description": "Themed HSV color picker for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/color-picker"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/color-picker",
   "type": "module",
   "sideEffects": [
     "**/*.css"

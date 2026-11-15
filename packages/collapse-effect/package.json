@@ -2,6 +2,13 @@
   "name": "@crystal-design/collapse-effect",
   "version": "0.1.0",
   "description": "Animated height collapse for any content, with inert closed content for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/collapse-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/collapse-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

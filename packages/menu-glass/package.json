@@ -2,6 +2,13 @@
   "name": "@crystal-design/menu-glass",
   "version": "0.1.0",
   "description": "Liquid glass menu and context menu for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/menu-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/menu-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"

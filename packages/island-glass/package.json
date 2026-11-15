@@ -2,6 +2,13 @@
   "name": "@crystal-design/island-glass",
   "version": "0.1.0",
   "description": "Liquid glass island that morphs from pill to panel for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/island-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/island-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"

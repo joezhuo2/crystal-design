@@ -2,6 +2,13 @@
   "name": "@crystal-design/morph-effect",
   "version": "0.1.0",
   "description": "Wrapper that morphs any panel from a pill into its full shape for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/morph-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/morph-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

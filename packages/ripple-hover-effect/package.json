@@ -2,6 +2,13 @@
   "name": "@crystal-design/ripple-hover-effect",
   "version": "0.1.0",
   "description": "Text whose characters ripple under the pointer for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/ripple-hover-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/ripple-hover-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

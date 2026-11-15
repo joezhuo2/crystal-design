@@ -2,6 +2,13 @@
   "name": "@crystal-design/glitch-text",
   "version": "0.1.0",
   "description": "Text that glitches in and out with RGB split and displacement, for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/glitch-text"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/glitch-text",
   "type": "module",
   "sideEffects": [
     "**/*.css"

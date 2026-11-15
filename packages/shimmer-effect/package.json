@@ -2,6 +2,13 @@
   "name": "@crystal-design/shimmer-effect",
   "version": "0.1.0",
   "description": "Sweeping light band for any React element",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/shimmer-effect"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/shimmer-effect",
   "type": "module",
   "sideEffects": [
     "**/*.css"

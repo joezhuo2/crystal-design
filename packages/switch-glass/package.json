@@ -2,6 +2,13 @@
   "name": "@crystal-design/switch-glass",
   "version": "0.1.0",
   "description": "Liquid glass switch for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/switch-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/switch-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"

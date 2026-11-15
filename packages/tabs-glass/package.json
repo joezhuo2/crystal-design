@@ -2,6 +2,13 @@
   "name": "@crystal-design/tabs-glass",
   "version": "0.1.0",
   "description": "Liquid glass tabs for React",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joezhuo2/crystal-design.git",
+    "directory": "packages/tabs-glass"
+  },
+  "homepage": "https://crystal-design.vercel.app/#/tabs-glass",
   "type": "module",
   "sideEffects": [
     "**/*.css"
